@@ -1,0 +1,1262 @@
+ ⚠ For production Image Optimization with Next.js, the optional 'sharp' package is strongly recommended. Run 'npm i sharp', and Next.js will use it automatically for Image Optimization.
+Read more: https://nextjs.org/docs/messages/sharp-missing-in-production
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\webpack-runtime.js
+- C:\Users\savel\Downloads\My pro\wikinova\.next\server\pages\_document.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\next.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\lib\start-server.js
+- C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\cli\next-start.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1517:15)
+    at C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1617:12)
+    at mod.require (C:\Users\savel\Downloads\My pro\wikinova\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\.next\\server\\pages\\_document.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\next.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\server\\lib\\start-server.js',
+    'C:\\Users\\savel\\Downloads\\My pro\\wikinova\\node_modules\\next\\dist\\cli\\next-start.js'
+  ]
+}

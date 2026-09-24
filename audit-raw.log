@@ -1,0 +1,96 @@
+== ANON PAGES ==
+200 / loc=
+200 /articles loc=
+200 /article/kvantovaya-mehanika-osnovy loc=
+200 /search?q=%D0%BD%D0%B0%D1%83%D0%BA%D0%B0 loc=
+200 /category/nauka loc=
+200 /tag/fizika loc=
+200 /request loc=
+200 /about loc=
+200 /contact loc=
+200 /rules loc=
+200 /admin/login loc=
+== ADMIN WITHOUT SESSION ==
+307 /admin loc=/admin/login?from=%2Fadmin
+307 /admin/articles loc=/admin/login?from=%2Fadmin%2Farticles
+307 /admin/ai/settings loc=/admin/login?from=%2Fadmin%2Fai%2Fsettings
+== LOGIN ==
+admin session: {"name":"Администратор","email":"admin@wikinova.local","role":"ADMIN","id":"cmue403vc00005tnukx2skm6b"}
+editor session: {"name":"Редактор","email":"editor@wikinova.local","role":"EDITOR","id":"cmue403w400015tnunzsk3shf"}
+== ADMIN PAGES (admin) ==
+200 /admin loc=
+200 /admin/articles loc=
+200 /admin/articles/new loc=
+200 /admin/articles/cmue4040j000t5tnu16cyslwv/edit loc=
+200 /admin/media loc=
+200 /admin/requests loc=
+200 /admin/users loc=
+200 /admin/categories loc=
+200 /admin/tags loc=
+200 /admin/settings loc=
+200 /admin/ai/settings loc=
+200 /admin/ai/prompts loc=
+200 /admin/ai/usage loc=
+200 /admin/ai/logs loc=
+== ROLES ==
+editor GET /admin/users -> 307 loc=/admin
+editor GET /api/admin/users -> 200 BAD(editor allowed!)
+editor POST /api/articles -> 201 id=cmueexrr10001jpjfbtx3wioe
+editor DELETE /api/articles/cmueexrr10001jpjfbtx3wioe -> 403 ok (denied expected)
+admin cleanup DELETE -> 200
+== S1 CREATE ARTICLE ==
+POST /api/articles -> 201 slug=audit-skvoznoy-scenariy
+GET /article/audit-skvoznoy-scenariy -> 200
+  contains link: true, iframe: true
+  contains <video: true, contains <table: true, contains blockquote: true
+== S2 REQUEST ==
+POST /api/requests -> 201 id=cmueexstb000ajpjfdsm315c0 status=pending
+GET /api/admin/requests -> 200 found audit request: true status=pending
+== S3 SUMMARIZE ==
+articleId=cmue4044h00155tnub6egcuae
+POST /api/ai/summarize -> 200 ct=text/event-stream
+SSE head: data: {"error":"Локальная модель недоступна. Проверьте Base URL в настройках AI. (Model is unloaded.)"} |  | 
+== S4 QA ARTICLE ==
+POST /api/ai/qa/article -> 200 head: data: {"error":"Локальная модель недоступна. Проверьте Base URL в настройках AI. (Model is unloaded.)"} |  | 
+== S5 QA GLOBAL ==
+POST /api/ai/qa/global -> 200 head: data: {"error":"Локальная модель недоступна. Проверьте Base URL в настройках AI. (Model is unloaded.)"} |  | 
+== S6 DRAFT ==
+POST /api/ai/draft -> 502 body: {"error":"Модель отклонила запрос: 400 \"Model is unloaded.\""}
+== S7 TRANSLATE ==
+POST /api/ai/translate -> 200 head: data: {"error":"Локальная модель недоступна. Проверьте Base URL в настройках AI. (Model is unloaded.)"} |  | 
+== S8 MEDIA UPLOAD ==
+POST /api/upload jpg -> 201 url=/uploads/images/202609-9b712c58-c0ea-4890-a1c3-554ce82386f1.jpg
+GET /uploads/images/202609-9b712c58-c0ea-4890-a1c3-554ce82386f1.jpg -> 200
+POST /api/upload traversal-name -> 201 url=/uploads/images/202609-e84fc205-15d5-41c0-9ed0-6800ba31ae56.jpg
+POST /api/upload .js -> 400 ok denied
+GET /api/admin/media -> 200 count=6
+DELETE media -> 200
+file removed from disk: true
+== S9 AI SETTINGS ==
+GET settings -> 200 baseUrl="http://localhost:1234/v1"
+POST /api/admin/ai/test -> 200 {"ok":false,"error":"Модель отклонила запрос: 400 \"Model is unloaded.\""}
+PUT baseUrl without /v1 -> 200
+re-read baseUrl=http://localhost:1234 normalized=NO -> BUG: no /v1 normalization
+PUT temperature 1.25 -> 200
+temperature re-read=1.25
+PUT reset -> 200
+after reset baseUrl=http://host.docker.internal:1234/v1 temp=0.7
+== S10 DASHBOARD ==
+GET /api/admin/stats -> 200 chartDays=30 recent=12 articles=13
+== SEARCH ==
+search "наука" -> 200 total=0 items=0
+search "квантовая" -> 200 total=0 items=0
+== RATE LIMIT (anon x11) ==
+rate-limit statuses: 200,200,200,200,200,200,200,200,200,200,200
+== ABORT STREAM ==
+abort -> status=200 partial=data: {"error":"Локальная модель недоступна. Проверьте Base URL в настройках AI. (Connection error.)"} |  | 
+== SIGNOUT ==
+signout -> 302 session-cleared-cookie=true
+session after signout: {"user":{"name":"Администратор","email":"admin@wikinova.local","role":"ADMIN","id":"cmue403vc00005tnukx2skm6b"},"expires":"2026-10-23T18:05:53.213Z"}
+== SIMILAR ==
+similar -> 200 sources=4
+== ADMIN AI ENDPOINTS ==
+/api/admin/ai/prompts -> 200 {"rows":[{"id":"cmue4049i001o5tnum8rjw1gz","key":"draft","template":"Ты редактор энциклопедии. Напиши черновик статьи на тему: {topic}.\nСтиль: нейтральный энци
+/api/admin/ai/usage?range=24h -> 200 {"totals":{"requests":24,"tokensIn":2028,"tokensOut":285,"avgMs":3077,"errors":19},"chart":[{"date":"23.09 17:00","requests":7,"tokensOut":285},{"date":"23.09 2
+/api/admin/ai/logs?limit=5 -> 200 {"errors":[{"id":"cmueeyyyp000zjpjf3pilsd4n","userId":"cmue403vc00005tnukx2skm6b","feature":"summarize","model":"google/gemma-4-12b-qat","tokensIn":0,"tokensOut
+cleanup audit article -> 200

@@ -1,0 +1,37 @@
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3001
+  - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 7.3s
+ ○ Compiling / ...
+ ✓ Compiled / in 8.1s (1419 modules)
+ GET / 200 in 8416ms
+ ✓ Compiled /api/search in 304ms (845 modules)
+ GET /api/search?q=%D0%BA%D0%B2%D0%B0%D0%BD%D1%82%D0%BE%D0%B2%D0%B0%D1%8F 200 in 1006ms
+ GET /api/search?q=%D0%9A%D0%B2%D0%B0%D0%BD%D1%82%D0%BE%D0%B2%D0%B0%D1%8F 200 in 43ms
+ GET /api/search?q=%D0%BD%D0%B0%D1%83%D0%BA%D0%B0 200 in 27ms
+ ✓ Compiled /api/articles in 165ms (858 modules)
+ GET /api/articles?pageSize=1 200 in 234ms
+ ○ Compiling /api/ai/summarize ...
+ ✓ Compiled /api/ai/summarize in 623ms (1025 modules)
+ POST /api/ai/summarize 200 in 1440ms
+ POST /api/ai/summarize 200 in 14ms
+ POST /api/ai/summarize 200 in 16ms
+ POST /api/ai/summarize 200 in 13ms
+ POST /api/ai/summarize 200 in 17ms
+ POST /api/ai/summarize 200 in 12ms
+ POST /api/ai/summarize 200 in 12ms
+ POST /api/ai/summarize 200 in 12ms
+ POST /api/ai/summarize 200 in 12ms
+ POST /api/ai/summarize 200 in 12ms
+ POST /api/ai/summarize 429 in 10ms
+ ✓ Compiled /api/auth/[...nextauth] in 167ms (1027 modules)
+ GET /api/auth/csrf 200 in 529ms
+ POST /api/auth/callback/credentials 200 in 98ms
+ ✓ Compiled /middleware in 149ms (177 modules)
+ ✓ Compiled /api/admin/ai/settings in 163ms (1029 modules)
+ PUT /api/admin/ai/settings 200 in 198ms
+ PUT /api/admin/ai/settings 200 in 14ms
+ PUT /api/admin/ai/settings 400 in 9ms
+ PUT /api/admin/ai/settings 200 in 15ms

@@ -1,0 +1,266 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  passwordHash String
+  role         String   @default("USER")
+  avatar       String?
+  blocked      Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  articles     Article[]
+  likes        ArticleLike[]
+  bookmarks    Bookmark[]
+  uploads      Media[]
+  versions     ArticleVersion[]
+  activity     ActivityLog[]
+  requests     ArticleRequest[] @relation("AssignedRequests")
+  ratings      ArticleRating[]
+  collections  Collection[]
+}
+
+model Article {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  excerpt     String   @default("")
+  content     String   @default("")
+  coverImage  String?
+  status      String   @default("draft")
+  views       Int      @default(0)
+  readingTime Int      @default(1)
+  featured    Boolean  @default(false)
+  authorId    String
+  categoryId  String?
+  requestId   String?
+  seoTitle    String?
+  seoDescription String?
+  ogImage     String?
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  author      User     @relation(fields: [authorId], references: [id])
+  category    Category? @relation(fields: [categoryId], references: [id])
+  request     ArticleRequest? @relation(fields: [requestId], references: [id])
+  tags        ArticleTag[]
+  likes       ArticleLike[]
+  bookmarks   Bookmark[]
+  versions    ArticleVersion[]
+  translations ArticleTranslation[]
+  summaries   AISummaryCache[]
+  ratings     ArticleRating[]
+  collectionItems CollectionItem[]
+}
+
+model ArticleRating {
+  id        String   @id @default(cuid())
+  articleId String
+  userId    String
+  value     Int
+  createdAt DateTime @default(now())
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([articleId, userId])
+}
+
+model Collection {
+  id          String           @id @default(cuid())
+  userId      String
+  name        String
+  description String           @default("")
+  isPublic    Boolean          @default(false)
+  createdAt   DateTime         @default(now())
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items       CollectionItem[]
+}
+
+model CollectionItem {
+  id           String     @id @default(cuid())
+  collectionId String
+  articleId    String
+  order        Int        @default(0)
+  createdAt    DateTime   @default(now())
+  collection   Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  article      Article    @relation(fields: [articleId], references: [id], onDelete: Cascade)
+
+  @@unique([collectionId, articleId])
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  name        String
+  description String    @default("")
+  icon        String    @default("")
+  color       String    @default("#166534")
+  articles    Article[]
+}
+
+model Tag {
+  id      String       @id @default(cuid())
+  slug    String       @unique
+  name    String
+  articles ArticleTag[]
+}
+
+model ArticleTag {
+  articleId String
+  tagId     String
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, tagId])
+}
+
+model Media {
+  id         String   @id @default(cuid())
+  filename   String
+  url        String
+  type       String
+  size       Int
+  mimeType   String
+  uploadedById String?
+  createdAt  DateTime @default(now())
+  uploadedBy User?    @relation(fields: [uploadedById], references: [id])
+}
+
+model ArticleRequest {
+  id            String   @id @default(cuid())
+  topic         String
+  description   String   @default("")
+  category      String   @default("")
+  level         String   @default("standard")
+  email         String
+  name          String   @default("")
+  status        String   @default("pending")
+  adminComment  String   @default("")
+  attachmentUrl String?
+  assignedToId  String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  assignedTo    User?    @relation("AssignedRequests", fields: [assignedToId], references: [id])
+  articles      Article[]
+}
+
+model ArticleVersion {
+  id          String   @id @default(cuid())
+  articleId   String
+  title       String
+  content     String
+  createdById String?
+  createdAt   DateTime @default(now())
+  article     Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  createdBy   User?    @relation(fields: [createdById], references: [id])
+}
+
+model ArticleLike {
+  userId    String
+  articleId String
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+
+  @@id([userId, articleId])
+}
+
+model Bookmark {
+  userId    String
+  articleId String
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+
+  @@id([userId, articleId])
+}
+
+model ActivityLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  action    String
+  entity    String
+  entityId  String?
+  createdAt DateTime @default(now())
+  user      User?    @relation(fields: [userId], references: [id])
+}
+
+model AISettings {
+  id               Int      @id @default(1)
+  baseUrl          String
+  apiKeyEncrypted  String   @default("")
+  model            String
+  temperature      Float    @default(0.7)
+  maxTokens        Int      @default(2048)
+  timeoutMs        Int      @default(60000)
+  systemPrompt     String   @default("")
+  languages        String   @default("ru,en,de,fr,es,zh")
+  featuresEnabled  String   @default("summary,qa_article,qa_global,draft,improve,translate,factcheck,metadata,web_search,embeddings")
+  rateLimitUser    Int      @default(30)
+  rateLimitAnon    Int      @default(10)
+  logEnabled       Boolean  @default(true)
+  updatedAt        DateTime @updatedAt
+  updatedById      String?
+}
+
+model AIPrompt {
+  id        String   @id @default(cuid())
+  key       String
+  template  String
+  version   Int      @default(1)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model AIUsage {
+  id        String   @id @default(cuid())
+  userId    String?
+  feature   String
+  model     String
+  tokensIn  Int      @default(0)
+  tokensOut Int      @default(0)
+  durationMs Int     @default(0)
+  status    String
+  errorMsg  String?
+  articleId String?
+  createdAt DateTime @default(now())
+}
+
+model AISummaryCache {
+  id          String   @id @default(cuid())
+  articleId   String
+  contentHash String
+  summary     String
+  keyFacts    String   @default("[]")
+  createdAt   DateTime @default(now())
+  article     Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+
+  @@unique([articleId, contentHash])
+}
+
+model ArticleTranslation {
+  id          String   @id @default(cuid())
+  articleId   String
+  lang        String
+  title       String
+  content     String
+  isMachine   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  article     Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+
+  @@unique([articleId, lang])
+}
+
+model SiteBlock {
+  id          String    @id @default(cuid())
+  key         String    @unique
+  value       String
+  type        String    @default("text")
+  updatedAt   DateTime  @updatedAt
+  updatedById String?
+}
