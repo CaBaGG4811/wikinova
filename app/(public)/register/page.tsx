@@ -60,73 +60,99 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="mx-auto max-w-md px-4 py-12">
-      <div className="card rounded-xl p-6">
-        <h1 className="font-display text-h3 font-bold mb-1">Регистрация</h1>
-        <p className="text-sm text-muted mb-6">Аккаунт читателя WikiNova</p>
+    <div className="grid min-h-[calc(100vh-3.5rem)] lg:grid-cols-2">
+      <aside className="hidden lg:flex flex-col justify-between bg-[#171412] p-12 text-[#F5F5F4]">
+        <div>
+          <p className="font-display text-3xl font-bold tracking-tight text-[#4ADE80]">WikiNova</p>
+          <p className="mt-6 max-w-[36ch] text-body leading-relaxed text-[#F5F5F4]/85">
+            Заведите аккаунт читателя: лайки, закладки, личные коллекции и заявки на новые
+            статьи. Статьи лежат на вашем сервере, без внешних сервисов и рекламы.
+          </p>
+        </div>
+        <blockquote className="max-w-[34ch] border-l-2 border-[#4ADE80]/50 pl-4 text-caption italic leading-relaxed text-[#F5F5F4]/70">
+          «Энциклопедия растёт из уточнений: каждая правка оставляет след в истории версий.»
+        </blockquote>
+      </aside>
 
-        <form onSubmit={submit} className="space-y-4">
-          <div>
-            <label className="label" htmlFor="reg-name">Имя</label>
-            <input
-              id="reg-name"
-              className="input"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Ваше имя"
-              autoComplete="name"
-            />
-          </div>
-          <div>
-            <label className="label" htmlFor="reg-email">Email</label>
-            <input
-              id="reg-email"
-              className="input"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@example.com"
-              autoComplete="email"
-            />
-          </div>
-          <div>
-            <label className="label" htmlFor="reg-password">Пароль</label>
-            <input
-              id="reg-password"
-              className="input"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Минимум 8 символов"
-              autoComplete="new-password"
-            />
-          </div>
-          <div>
-            <label className="label" htmlFor="reg-confirm">Повторите пароль</label>
-            <input
-              id="reg-confirm"
-              className="input"
-              type="password"
-              value={confirm}
-              onChange={(e) => setConfirm(e.target.value)}
-              placeholder="Ещё раз"
-              autoComplete="new-password"
-            />
+      <div className="flex items-center justify-center px-4 py-10">
+        <div className="w-full max-w-md">
+          <div className="mb-4 flex justify-end">
+            <Link
+              href="/login"
+              className="text-sm text-muted transition-colors duration-150 hover:text-ink"
+            >
+              Уже есть аккаунт? Войти →
+            </Link>
           </div>
 
-          {error ? <p className="text-sm text-danger">{error}</p> : null}
+          <div className="card rounded-lg border border-line p-6">
+            <h1 className="font-display text-h3 font-bold mb-1">Регистрация</h1>
+            <p className="text-sm text-muted mb-6">Аккаунт читателя WikiNova</p>
 
-          <button type="submit" className="btn-primary w-full" disabled={busy}>
-            {busy ? 'Создаём аккаунт' : 'Зарегистрироваться'}
-          </button>
-        </form>
+            <form onSubmit={submit} className="space-y-4">
+              <div>
+                <label className="label" htmlFor="reg-name">Имя</label>
+                <input
+                  id="reg-name"
+                  className="input"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Ваше имя"
+                  autoComplete="name"
+                />
+              </div>
+              <div>
+                <label className="label" htmlFor="reg-email">Email</label>
+                <input
+                  id="reg-email"
+                  className="input"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@example.com"
+                  autoComplete="email"
+                />
+              </div>
+              <div>
+                <label className="label" htmlFor="reg-password">Пароль</label>
+                <input
+                  id="reg-password"
+                  className="input"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Минимум 8 символов"
+                  autoComplete="new-password"
+                />
+              </div>
+              <div>
+                <label className="label" htmlFor="reg-confirm">Повторите пароль</label>
+                <input
+                  id="reg-confirm"
+                  className="input"
+                  type="password"
+                  value={confirm}
+                  onChange={(e) => setConfirm(e.target.value)}
+                  placeholder="Ещё раз"
+                  autoComplete="new-password"
+                />
+              </div>
 
-        <p className="text-sm text-muted mt-5 text-center">
-          Уже есть аккаунт?{' '}
-          <Link href="/login" className="text-primary underline underline-offset-2">
-            Войти
-          </Link>
-        </p>
+              {error ? <p className="text-sm text-danger">{error}</p> : null}
+
+              <button type="submit" className="btn-primary w-full" disabled={busy}>
+                {busy ? 'Создаём аккаунт' : 'Зарегистрироваться'}
+              </button>
+            </form>
+
+            <p className="text-sm text-muted mt-5 text-center">
+              Уже есть аккаунт?{' '}
+              <Link href="/login" className="text-primary underline underline-offset-2">
+                Войти
+              </Link>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -54,7 +54,7 @@ function Meta({ article, small }: { article: ArticleCardItem; small?: boolean })
   return (
     <div
       className={cn(
-        'flex flex-wrap items-center gap-x-3 gap-y-1 text-caption text-muted',
+        'flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[13px] font-normal text-muted',
         small && 'text-xs',
       )}
     >
@@ -76,13 +76,13 @@ export function ArticleCard({ article, variant = 'default', priority = false, st
     return (
       <Link
         href={`/article/${article.slug}`}
-        className="card group flex flex-col gap-1.5 p-3.5 transition-colors duration-150 hover:border-ink/30"
+        className="card card-hoverable group flex flex-col gap-1.5 p-3.5"
       >
         <div className="flex flex-wrap items-center gap-1.5">
           <CategoryBadge article={article} />
           <StatusBadge status={article.status} />
         </div>
-        <h3 className="font-display text-base font-semibold leading-snug transition-colors duration-150 group-hover:text-primary">
+        <h3 className="font-display text-base font-bold leading-snug transition-colors duration-150 group-hover:text-primary">
           {article.title}
         </h3>
         <Meta article={article} small />
@@ -94,7 +94,7 @@ export function ArticleCard({ article, variant = 'default', priority = false, st
     return (
       <Link
         href={`/article/${article.slug}`}
-        className="card group flex gap-4 p-4 transition-colors duration-150 hover:border-ink/30"
+        className="card card-hoverable group flex gap-4 p-4"
       >
         {article.coverImage ? (
           <div className="hidden w-40 shrink-0 overflow-hidden rounded-sm bg-ink/5 sm:block">
@@ -114,11 +114,11 @@ export function ArticleCard({ article, variant = 'default', priority = false, st
             <CategoryBadge article={article} />
             <StatusBadge status={article.status} />
           </div>
-          <h3 className="font-display text-lg font-semibold leading-snug transition-colors duration-150 group-hover:text-primary">
+          <h3 className="font-display text-lg font-bold leading-snug transition-colors duration-150 group-hover:text-primary">
             {article.title}
           </h3>
           {article.excerpt ? (
-            <p className="line-clamp-2 text-caption text-muted">{article.excerpt}</p>
+            <p className="line-clamp-3 text-base leading-relaxed text-muted">{article.excerpt}</p>
           ) : null}
           <div className="mt-auto pt-0.5">
             <Meta article={article} />
@@ -131,7 +131,7 @@ export function ArticleCard({ article, variant = 'default', priority = false, st
   return (
     <Link
       href={`/article/${article.slug}`}
-      className="card group flex h-full flex-col overflow-hidden transition-colors duration-150 hover:border-ink/30"
+      className="card card-hoverable group flex h-full flex-col overflow-hidden"
     >
       {article.coverImage ? (
         <div
@@ -162,14 +162,14 @@ export function ArticleCard({ article, variant = 'default', priority = false, st
         </div>
         <h3
           className={cn(
-            'font-display font-semibold leading-snug transition-colors duration-150 group-hover:text-primary',
-            stretch ? 'text-h3' : 'text-lg',
+            'font-display font-bold leading-snug transition-colors duration-150 group-hover:text-primary',
+            stretch ? 'text-h3' : 'text-xl',
           )}
         >
           {article.title}
         </h3>
         {article.excerpt ? (
-          <p className={cn('text-caption text-muted', stretch ? 'line-clamp-4' : 'line-clamp-2')}>
+          <p className={cn('text-base leading-relaxed text-muted', stretch ? 'line-clamp-4' : 'line-clamp-3')}>
             {article.excerpt}
           </p>
         ) : null}

@@ -24,7 +24,7 @@
   --c-surface: 35 31 28;
   --c-ink: 245 245 244;
   --c-muted: 168 162 158;
-  --c-line: 55 50 46;
+  --c-line: 41 37 36;
   --c-primary: 74 222 128;
   --c-primary-fg: 23 20 18;
   --c-primary-soft: 34 63 47;
@@ -55,16 +55,22 @@ h1, h2, h3, h4, .font-display {
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors duration-150 disabled:opacity-50 disabled:pointer-events-none;
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all duration-150 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+  .btn:active:not(:disabled) {
+    transform: translateY(0) scale-95;
   }
   .btn-primary {
     @apply btn bg-primary text-primary-fg hover:bg-primary/90;
   }
   .btn-secondary {
-    @apply btn border border-line bg-surface text-ink hover:border-ink/40;
+    @apply btn border border-line bg-surface text-ink hover:border-primary/50 hover:bg-primary/5;
   }
   .btn-ghost {
-    @apply btn text-muted hover:text-ink hover:bg-ink/5;
+    @apply btn text-muted hover:text-ink hover:bg-primary/5;
   }
   .btn-danger {
     @apply btn bg-danger text-white hover:bg-danger/90;
@@ -73,13 +79,16 @@ h1, h2, h3, h4, .font-display {
     @apply rounded-lg border border-line bg-surface;
   }
   .input {
-    @apply w-full rounded-md border border-line bg-surface px-3 py-2 text-sm text-ink placeholder:text-muted/70 focus:outline-none focus:border-primary/60 transition-colors duration-150;
+    @apply w-full rounded-md border border-line bg-bg px-3 py-2 text-sm text-ink placeholder:text-muted/70 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-150;
   }
   .label {
     @apply block text-caption font-medium text-muted mb-1.5;
   }
   .badge {
     @apply inline-flex items-center rounded-full border border-line bg-surface px-2.5 py-0.5 text-xs font-medium text-muted;
+  }
+  .mono-meta {
+    @apply font-mono text-[13px] font-normal text-muted;
   }
   .prose-wiki {
     font-size: 1.0625rem;
@@ -108,7 +117,16 @@ h1, h2, h3, h4, .font-display {
 }
 
 .stagger-item {
-  animation: stagger-in 380ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: stagger-in 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.card-hoverable {
+  transition: transform 170ms ease, box-shadow 170ms ease, border-color 170ms ease;
+}
+.card-hoverable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px -6px rgb(28 25 23 / 0.18);
+  border-color: rgb(var(--c-primary) / 0.45);
 }
 
 @media (prefers-reduced-motion: reduce) {

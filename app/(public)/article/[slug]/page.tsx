@@ -20,6 +20,8 @@ import { AiRelated } from '@/components/article/AiRelated';
 import { ArticleCard } from '@/components/article/ArticleCard';
 import { RatingStars } from '@/components/article/RatingStars';
 import { AddToCollectionButton } from '@/components/article/AddToCollectionButton';
+import { ArticleTldr } from '@/components/article/ArticleTldr';
+import { AiSimilarButton } from '@/components/article/AiSimilarButton';
 
 export const dynamic = 'force-dynamic';
 
@@ -184,6 +186,7 @@ export default async function ArticlePage({ params }: Props) {
 
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_240px]">
         <div className="min-w-0">
+          <ArticleTldr articleId={article.id} initial={article.summary ?? null} />
           {article.coverImage ? (
             <img
               src={article.coverImage}
@@ -223,7 +226,8 @@ export default async function ArticlePage({ params }: Props) {
           {similar.length > 0 ? (
             <section className="mt-10">
               <h2 className="font-display mb-4 text-h3 font-semibold">Похожие статьи</h2>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <AiSimilarButton articleId={article.id} />
+              <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {similar.map((a, i) => (
                   <div
                     key={a.id}

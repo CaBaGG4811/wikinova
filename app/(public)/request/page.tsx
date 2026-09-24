@@ -22,25 +22,27 @@ export default async function RequestPage() {
   ]);
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10">
+    <div className="mx-auto max-w-6xl px-4 py-10">
       <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Заказать статью' }]} />
 
-      <h1 className="font-display mb-3 text-h2 font-bold">
+      <div className="max-w-2xl">
+        <h1 className="font-display mb-3 text-h2 font-bold">
+          <EditableBlock
+            blockKey="request.title"
+            as="span"
+            defaultValue={blocks['request.title']}
+          />
+        </h1>
         <EditableBlock
-          blockKey="request.title"
-          as="span"
-          defaultValue={blocks['request.title']}
+          blockKey="request.subtitle"
+          as="p"
+          className="mb-8 max-w-[68ch] text-body text-muted"
+          multiline
+          defaultValue={blocks['request.subtitle']}
         />
-      </h1>
-      <EditableBlock
-        blockKey="request.subtitle"
-        as="p"
-        className="mb-8 max-w-[68ch] text-body text-muted"
-        multiline
-        defaultValue={blocks['request.subtitle']}
-      />
 
-      <RequestForm categories={categories} />
+        <RequestForm categories={categories} />
+      </div>
     </div>
   );
 }

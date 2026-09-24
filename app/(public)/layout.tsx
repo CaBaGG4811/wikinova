@@ -20,9 +20,22 @@ export default async function PublicLayout({ children }: { children: React.React
           <div className="mx-auto max-w-6xl px-4 h-14 flex items-center gap-3 md:gap-4 xl:gap-6 relative">
             <Link
               href="/"
-              className="font-display font-bold text-lg tracking-tight shrink-0 whitespace-nowrap"
+              aria-label="WikiNova — локальная энциклопедия"
+              className="flex items-center gap-3 shrink-0 whitespace-nowrap group"
             >
-              Wiki<span className="text-primary">Nova</span>
+              <img
+                src="/logo.png"
+                alt="WikiNova"
+                className="h-10 w-10 md:h-12 md:w-12 object-contain dark:drop-shadow-[0_1px_3px_rgba(245,245,244,0.3)]"
+              />
+              <span className="flex flex-col leading-tight">
+                <span className="font-display font-bold text-lg md:text-xl tracking-tight text-primary">
+                  WikiNova
+                </span>
+                <span className="font-serif text-xs md:text-sm italic text-muted">
+                  Локальная энциклопедия
+                </span>
+              </span>
             </Link>
             <HeaderNav />
             <div className="flex-1" />

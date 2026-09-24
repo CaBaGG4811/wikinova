@@ -77,6 +77,45 @@ export const DEFAULT_PROMPTS: Record<string, string> = {
 """
 {content}
 """`,
+  summarize_short: `Сделай краткое содержание (TL;DR) статьи: 3-4 предложения, только ключевые факты, нейтральный энциклопедический тон. Без списков, без вступлений вроде "В этой статье".
+Язык ответа: русский (если контекст на русском).
+Статья:
+"""
+{content}
+"""`,
+  collection_description: `Создай краткое описание коллекции энциклопедических статей на основе её названия и содержания статей. 2-3 предложения, энциклопедический стиль, без маркетинга.
+Название: {name}
+Статьи:
+"""
+{articles}
+"""`,
+  quality_check: `Оцени качество энциклопедической статьи. Верни строго JSON:
+{"score": 0-100, "issues": ["..."], "suggestions": ["..."]}
+Критерии: читаемость, полнота, нейтральность, наличие источников, структура.
+Язык ответа: русский.
+Заголовок: {title}
+Текст:
+"""
+{content}
+"""`,
+  auto_tags: `Предложи 3-7 релевантных тегов для статьи из списка существующих тегов вики. Если ни один не подходит, предложи новые короткие имена.
+Ответь строго JSON: {"suggestedTags": [{"name": "..."}]}
+Существующие теги: {tags}
+Заголовок: {title}
+Текст:
+"""
+{content}
+"""`,
+  similar: `Определи семантическое сходство текущей статьи с кандидатами. Для каждого кандидата дай score 0-100.
+Ответь строго JSON: {"results": [{"id": "...", "similarity": 0-100}]}
+Текущая статья:
+"""
+{content}
+"""
+Кандидаты:
+"""
+{candidates}
+"""`,
 };
 
 export async function getPromptTemplate(key: string): Promise<string> {
@@ -144,6 +183,26 @@ export function buildTranslatePrompt(v: { lang: string; title: string; content: 
 
 export function buildFactCheckPrompt(content: string): Promise<string> {
   return build('factcheck', { content });
+}
+
+export function buildSummarizeShortPrompt(content: string): Promise<string> {
+  return build('summarize_short', { content });
+}
+
+export function buildCollectionDescriptionPrompt(name: string, articles: string): Promise<string> {
+  return build('collection_description', { name, articles });
+}
+
+export function buildQualityCheckPrompt(title: string, content: string): Promise<string> {
+  return build('quality_check', { title, content });
+}
+
+export function buildAutoTagsPrompt(title: string, content: string, tags: string): Promise<string> {
+  return build('auto_tags', { title, content, tags });
+}
+
+export function buildSimilarPrompt(content: string, candidates: string): Promise<string> {
+  return build('similar', { content, candidates });
 }
 
 export async function buildMetadataPrompt(

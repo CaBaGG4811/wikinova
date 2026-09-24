@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { FolderPlus, Globe, Lock, Pencil, Trash2 } from 'lucide-react';
+import { FolderPlus, Globe, Lock, Pencil, Sparkles, Trash2 } from 'lucide-react';
 
 interface CollectionRow {
   id: string;
@@ -114,6 +114,41 @@ export function CollectionsManager() {
     if (res.ok) await load();
   }
 
+  const [aiBusy, setAiBusy] = useState(false);
+
+  async function describeWithAi(
+    colName: string,
+    collectionId: string | null,
+    apply: (v: string) => void,
+  ) {
+    if (!colName.trim() || aiBusy) return;
+    setAiBusy(true);
+    try {
+      let articles: { title: string; excerpt: string }[] = [];
+      if (collectionId) {
+        const res = await fetch(`/api/collections/${collectionId}`);
+        const data = (await res.json().catch(() => null)) as
+          | { collection?: { items?: { article?: { title?: string; excerpt?: string } }[] } }
+          | null;
+        articles = (data?.collection?.items ?? [])
+          .map((i) => ({ title: i.article?.title ?? '', excerpt: i.article?.excerpt ?? '' }))
+          .filter((a) => a.title);
+      }
+      const aiRes = await fetch('/api/ai/collection-description', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: colName.trim(), articles }),
+      });
+      const data = (await aiRes.json().catch(() => null)) as { description?: string; error?: string } | null;
+      if (!aiRes.ok || !data?.description) throw new Error(data?.error ?? 'ai');
+      apply(data.description.slice(0, 400));
+    } catch {
+      setError('ИИ не смог описать коллекцию. Попробуйте позже.');
+    } finally {
+      setAiBusy(false);
+    }
+  }
+
   return (
     <div className="space-y-6">
       <form onSubmit={create} className="card p-4 space-y-3">
@@ -135,14 +170,25 @@ export function CollectionsManager() {
           </div>
           <div>
             <label className="label" htmlFor="col-desc">Описание</label>
-            <input
-              id="col-desc"
-              className="input"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              placeholder="Необязательно"
-              maxLength={400}
-            />
+            <div className="flex gap-2">
+              <input
+                id="col-desc"
+                className="input"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Необязательно"
+                maxLength={400}
+              />
+              <button
+                type="button"
+                className="btn-secondary !px-2.5 shrink-0"
+                title="Описать с помощью ИИ"
+                disabled={aiBusy || !name.trim()}
+                onClick={() => void describeWithAi(name, null, setDescription)}
+              >
+                <Sparkles size={15} />
+              </button>
+            </div>
           </div>
         </div>
         <label className="inline-flex items-center gap-2 text-sm text-muted cursor-pointer">
@@ -178,13 +224,24 @@ export function CollectionsManager() {
                       onChange={(e) => setEditName(e.target.value)}
                       maxLength={80}
                     />
-                    <input
-                      className="input"
-                      value={editDescription}
-                      onChange={(e) => setEditDescription(e.target.value)}
-                      maxLength={400}
-                      placeholder="Описание"
-                    />
+                    <div className="flex gap-2">
+                      <input
+                        className="input"
+                        value={editDescription}
+                        onChange={(e) => setEditDescription(e.target.value)}
+                        maxLength={400}
+                        placeholder="Описание"
+                      />
+                      <button
+                        type="button"
+                        className="btn-secondary !px-2.5 shrink-0"
+                        title="Описать с помощью ИИ"
+                        disabled={aiBusy}
+                        onClick={() => void describeWithAi(editName, row.id, setEditDescription)}
+                      >
+                        <Sparkles size={15} />
+                      </button>
+                    </div>
                     <label className="inline-flex items-center gap-2 text-sm text-muted cursor-pointer">
                       <input
                         type="checkbox"

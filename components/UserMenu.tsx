@@ -54,7 +54,7 @@ export function UserMenu() {
         aria-expanded={open}
       >
         <User size={15} />
-        <span className="max-w-[12ch] truncate">{name}</span>
+        <span className="hidden md:inline whitespace-nowrap">{name}</span>
         <ChevronDown size={13} className={open ? 'rotate-180 transition-transform' : 'transition-transform'} />
       </button>
       {open ? (

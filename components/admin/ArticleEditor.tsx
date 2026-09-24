@@ -286,6 +286,9 @@ export default function ArticleEditor({
   const [metaBusy, setMetaBusy] = useState(false);
   const [suggestedTags, setSuggestedTags] = useState<string[]>([]);
   const [suggestedCategory, setSuggestedCategory] = useState<string | null>(null);
+  const [qualityBusy, setQualityBusy] = useState(false);
+  const [quality, setQuality] = useState<{ score: number; issues: string[]; suggestions: string[] } | null>(null);
+  const [autoTagsBusy, setAutoTagsBusy] = useState(false);
 
   const [newTag, setNewTag] = useState('');
   const [previewOpen, setPreviewOpen] = useState(false);
@@ -643,6 +646,51 @@ export default function ArticleEditor({
       toast(AI_DOWN, 'err');
     } finally {
       setMetaBusy(false);
+    }
+  }
+
+  async function checkQuality() {
+    if (!editor || qualityBusy) return;
+    setQualityBusy(true);
+    try {
+      const res = await fetch('/api/ai/quality-check', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: editor.getHTML(), title: title || 'Без заголовка' }),
+      });
+      const data = (await res.json().catch(() => null)) as
+        | { score?: number; issues?: string[]; suggestions?: string[]; error?: string }
+        | null;
+      if (!res.ok || !data || typeof data.score !== 'number') throw new Error(data?.error ?? 'ai');
+      setQuality({ score: data.score, issues: data.issues ?? [], suggestions: data.suggestions ?? [] });
+      toast(`Качество: ${data.score}/100`);
+    } catch {
+      toast(AI_DOWN, 'err');
+    } finally {
+      setQualityBusy(false);
+    }
+  }
+
+  async function suggestTags() {
+    if (!editor || autoTagsBusy) return;
+    setAutoTagsBusy(true);
+    try {
+      const res = await fetch('/api/ai/auto-tags', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: editor.getHTML(), title: title || 'Без заголовка' }),
+      });
+      const data = (await res.json().catch(() => null)) as
+        | { suggestedTags?: { name: string }[]; error?: string }
+        | null;
+      if (!res.ok || !data?.suggestedTags) throw new Error(data?.error ?? 'ai');
+      const names = data.suggestedTags.map((t) => t.name).filter(Boolean);
+      setSuggestedTags((prev) => Array.from(new Set([...prev, ...names])));
+      toast(names.length > 0 ? `Предложено тегов: ${names.length}` : 'Новых тегов не найдено');
+    } catch {
+      toast(AI_DOWN, 'err');
+    } finally {
+      setAutoTagsBusy(false);
     }
   }
 
@@ -1301,18 +1349,61 @@ export default function ArticleEditor({
           </div>
 
           <div className="card p-4 space-y-4">
-            <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center justify-between gap-2 flex-wrap">
               <h2 className="font-display font-semibold text-sm">SEO</h2>
-              <button
-                type="button"
-                className="btn-secondary !py-1 !px-2.5 text-xs"
-                onClick={fillMetadata}
-                disabled={metaBusy}
-              >
-                <BookOpen size={14} />
-                {metaBusy ? 'Запрашиваем...' : 'Заполнить AI'}
-              </button>
+              <div className="flex flex-wrap gap-1.5">
+                <button
+                  type="button"
+                  className="btn-secondary !py-1 !px-2.5 text-xs"
+                  onClick={() => void suggestTags()}
+                  disabled={autoTagsBusy}
+                >
+                  {autoTagsBusy ? 'Теги...' : 'Авто-теги'}
+                </button>
+                <button
+                  type="button"
+                  className="btn-secondary !py-1 !px-2.5 text-xs"
+                  onClick={() => void checkQuality()}
+                  disabled={qualityBusy}
+                >
+                  <BookOpen size={14} />
+                  {qualityBusy ? 'Проверяем...' : 'Качество'}
+                </button>
+                <button
+                  type="button"
+                  className="btn-secondary !py-1 !px-2.5 text-xs"
+                  onClick={fillMetadata}
+                  disabled={metaBusy}
+                >
+                  {metaBusy ? 'Запрашиваем...' : 'Заполнить AI'}
+                </button>
+              </div>
             </div>
+            {quality ? (
+              <div className="rounded-lg border border-line bg-surface-soft/50 p-3 text-sm space-y-2">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-display font-semibold text-sm">Оценка качества</span>
+                  <span className="mono-meta text-primary">{quality.score}/100</span>
+                </div>
+                {quality.issues.length > 0 ? (
+                  <ul className="list-disc pl-4 space-y-1 text-xs text-muted">
+                    {quality.issues.map((i) => (
+                      <li key={i}>{i}</li>
+                    ))}
+                  </ul>
+                ) : null}
+                {quality.suggestions.length > 0 ? (
+                  <ul className="list-disc pl-4 space-y-1 text-xs text-muted">
+                    {quality.suggestions.map((s) => (
+                      <li key={s}>{s}</li>
+                    ))}
+                  </ul>
+                ) : null}
+                <button type="button" className="btn-ghost !px-2 !py-1 text-xs" onClick={() => setQuality(null)}>
+                  Скрыть
+                </button>
+              </div>
+            ) : null}
             <div>
               <label className="label">SEO заголовок</label>
               <input

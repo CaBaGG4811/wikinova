@@ -179,7 +179,7 @@ export function AssistantDock() {
         onClick={() => setOpen(true)}
         className="fixed bottom-5 right-5 z-40 w-14 h-14 rounded-xl border border-line bg-surface shadow-float flex items-center justify-center text-ink hover:border-ink/40 transition-colors duration-150"
         aria-label="AI-ассистент"
-        title="AI-ассистент (Cmd/Ctrl+J)"
+        title="AI-ассистент"
       >
         <Compass size={22} />
       </button>
@@ -203,7 +203,6 @@ export function AssistantDock() {
                 <h2 className="font-display font-semibold text-base truncate">Ассистент</h2>
               </div>
               <div className="flex items-center gap-1 shrink-0">
-                <span className="hidden sm:inline text-xs text-muted font-mono">Cmd/Ctrl+J</span>
                 <button
                   type="button"
                   onClick={close}

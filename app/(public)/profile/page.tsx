@@ -58,7 +58,7 @@ export default async function ProfilePage() {
   ]);
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-10">
+    <div className="mx-auto max-w-6xl px-4 py-10">
       <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Профиль' }]} />
 
       <header className="mb-8 flex flex-wrap items-center justify-between gap-3">
