@@ -15,3 +15,6 @@
 Cannot read properties of null (reading '1')}
  ✓ Compiled / in 6.3s (2106 modules)
  GET / 200 in 6580ms
+ ✓ Compiled in 304ms (989 modules)
+ ✓ Compiled in 175ms (989 modules)
+ ✓ Compiled in 162ms (989 modules)
