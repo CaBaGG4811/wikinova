@@ -13,3 +13,4 @@ public/uploads/docs/*
 next-env.d.ts
 
 .vercel
+devlog.txt
