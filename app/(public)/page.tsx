@@ -58,9 +58,11 @@ export default async function HomePage() {
   return (
     <div>
       <section className="stagger-item" style={{ animationDelay: '0ms' }}>
-        <div className="mx-auto max-w-6xl px-4 pb-12 pt-14">
-          <p className="mb-3 text-caption font-medium text-primary">Локальная энциклопедия</p>
-          <h1 className="font-display max-w-[15ch] text-hero font-bold">
+        <div className="mx-auto max-w-6xl px-4 py-24 md:py-32">
+          <p className="mb-4 text-caption font-medium tracking-wide text-stone-500">
+            Локальная энциклопедия
+          </p>
+          <h1 className="font-display max-w-[15ch] text-5xl font-bold leading-[1.06] tracking-[-0.03em] lg:text-6xl">
             <EditableBlock
               blockKey="home.hero.title"
               as="span"
@@ -70,11 +72,11 @@ export default async function HomePage() {
           <EditableBlock
             blockKey="home.hero.subtitle"
             as="p"
-            className="mt-4 max-w-[54ch] text-body text-muted"
+            className="mt-5 max-w-[54ch] text-body text-stone-400"
             multiline
             defaultValue={blocks['home.hero.subtitle']}
           />
-          <div className="mt-8 max-w-2xl">
+          <div className="mt-10 max-w-3xl">
             <HeroSearch />
           </div>
         </div>
@@ -101,11 +103,11 @@ export default async function HomePage() {
             Статей пока нет
           </p>
         ) : (
-          <div className="grid gap-5 lg:grid-cols-3">
+          <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <ArticleCard article={heroCards[0]} priority stretch />
             </div>
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-8">
               {heroCards.slice(1, 3).map((a) => (
                 <div key={a.id} className="flex-1">
                   <ArticleCard article={a} />
@@ -133,7 +135,7 @@ export default async function HomePage() {
               Все новые
             </Link>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {freshList.map((a, i) => (
               <div key={a.id} className="stagger-item" style={{ animationDelay: `${i * 60}ms` }}>
                 <ArticleCard article={a} />

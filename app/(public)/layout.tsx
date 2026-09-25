@@ -28,13 +28,8 @@ export default async function PublicLayout({ children }: { children: React.React
                 alt="WikiNova"
                 className="h-10 w-10 md:h-12 md:w-12 object-contain dark:drop-shadow-[0_1px_3px_rgba(245,245,244,0.3)]"
               />
-              <span className="flex flex-col leading-tight">
-                <span className="font-display font-bold text-lg md:text-xl tracking-tight text-primary">
-                  WikiNova
-                </span>
-                <span className="font-serif text-xs md:text-sm italic text-muted">
-                  Локальная энциклопедия
-                </span>
+              <span className="font-display font-bold text-lg md:text-xl tracking-tight text-primary">
+                WikiNova
               </span>
             </Link>
             <HeaderNav />

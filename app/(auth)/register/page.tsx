@@ -60,7 +60,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="grid min-h-[calc(100vh-3.5rem)] lg:grid-cols-2">
+    <div className="card grid w-full max-w-4xl overflow-hidden shadow-float lg:grid-cols-2">
       <aside className="hidden lg:flex flex-col justify-between bg-[#171412] p-12 text-[#F5F5F4]">
         <div>
           <p className="font-display text-3xl font-bold tracking-tight text-[#4ADE80]">WikiNova</p>
@@ -74,7 +74,7 @@ export default function RegisterPage() {
         </blockquote>
       </aside>
 
-      <div className="flex items-center justify-center px-4 py-10">
+      <div className="flex items-center justify-center p-6 sm:p-8">
         <div className="w-full max-w-md">
           <div className="mb-4 flex justify-end">
             <Link

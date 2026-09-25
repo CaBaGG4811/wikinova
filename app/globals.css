@@ -121,10 +121,10 @@ h1, h2, h3, h4, .font-display {
 }
 
 .card-hoverable {
-  transition: transform 170ms ease, box-shadow 170ms ease, border-color 170ms ease;
+  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
 }
 .card-hoverable:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   box-shadow: 0 8px 30px -6px rgb(28 25 23 / 0.18);
   border-color: rgb(var(--c-primary) / 0.45);
 }

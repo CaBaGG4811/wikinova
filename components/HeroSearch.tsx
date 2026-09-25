@@ -68,7 +68,7 @@ export function HeroSearch() {
           onChange={(e) => setQ(e.target.value)}
           placeholder="Найти статью: квантовая механика, Рим, алгоритмы"
           aria-label="Поиск статей"
-          className="input !py-4 !pl-12 !pr-28 text-base"
+          className="input !py-4 !pl-12 !pr-28 !text-lg shadow-lg focus:!ring-4 focus:!ring-primary/10"
           autoComplete="off"
         />
         <button type="submit" className="btn-primary absolute right-2 top-1/2 -translate-y-1/2">
