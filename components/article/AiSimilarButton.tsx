@@ -40,7 +40,7 @@ export function AiSimilarButton({ articleId }: { articleId: string }) {
 
   if (items.length === 0 && !loading && !error) {
     return (
-      <button type="button" className="btn-secondary !py-1.5 !px-2.5 text-sm" onClick={() => void load()}>
+      <button type="button" className="btn-secondary !border-violet-300 !text-violet-700 hover:!bg-violet-50 !py-1.5 !px-2.5 text-sm" onClick={() => void load()}>
         <Sparkles size={15} />
         Найти с помощью ИИ
       </button>
@@ -50,7 +50,7 @@ export function AiSimilarButton({ articleId }: { articleId: string }) {
   return (
     <div className="mt-4 space-y-3">
       <div className="flex flex-wrap items-center gap-2">
-        <button type="button" className="btn-secondary !py-1.5 !px-2.5 text-sm" onClick={() => void load()} disabled={loading}>
+        <button type="button" className="btn-secondary !border-violet-300 !text-violet-700 hover:!bg-violet-50 !py-1.5 !px-2.5 text-sm" onClick={() => void load()} disabled={loading}>
           <Sparkles size={15} />
           {loading ? 'Ищем…' : 'Обновить'}
         </button>

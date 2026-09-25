@@ -1,10 +1,8 @@
 import Link from 'next/link';
-import { ThemeToggle } from '@/components/ThemeToggle';
-import { HeaderSearch } from '@/components/HeaderSearch';
-import { HeaderNav } from '@/components/HeaderNav';
+import { Sidebar } from '@/components/layout/Sidebar';
+import { AuthModalProvider } from '@/components/auth/AuthModal';
 import { AssistantDock } from '@/components/ai/AssistantDock';
 import { Providers } from '@/components/Providers';
-import { UserMenu } from '@/components/UserMenu';
 import { getBlocks } from '@/lib/blocks';
 import { EditableBlock } from '@/components/admin/EditableBlock';
 
@@ -15,65 +13,45 @@ export default async function PublicLayout({ children }: { children: React.React
 
   return (
     <Providers>
-      <div className="min-h-screen flex flex-col">
-        <header className="sticky top-0 z-40 border-b border-line bg-bg/95 backdrop-blur-[2px]">
-          <div className="mx-auto max-w-6xl px-4 h-14 flex items-center gap-3 md:gap-4 xl:gap-6 relative">
-            <Link
-              href="/"
-              aria-label="WikiNova — локальная энциклопедия"
-              className="flex items-center gap-3 shrink-0 whitespace-nowrap group"
-            >
-              <img
-                src="/logo.png"
-                alt="WikiNova"
-                className="h-10 w-10 md:h-12 md:w-12 object-contain dark:drop-shadow-[0_1px_3px_rgba(245,245,244,0.3)]"
-              />
-              <span className="font-display font-bold text-lg md:text-xl tracking-tight text-primary">
-                WikiNova
-              </span>
-            </Link>
-            <HeaderNav />
-            <div className="flex-1" />
-            <HeaderSearch />
-            <ThemeToggle />
-            <UserMenu />
-          </div>
-        </header>
-        <main className="flex-1">{children}</main>
-        <footer className="border-t border-line mt-16">
-          <div className="mx-auto max-w-6xl px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm text-muted">
-            <div>
-              <div className="font-display font-semibold text-ink mb-2">WikiNova</div>
-              <p>
-                <EditableBlock
-                  blockKey="footer.tagline"
-                  as="span"
-                  defaultValue={blocks['footer.tagline']}
-                />
-              </p>
+      <AuthModalProvider>
+        <div className="flex min-h-screen flex-col bg-white pl-16">
+          <Sidebar />
+          <main className="flex-1">{children}</main>
+          <footer className="mt-16 border-t border-line">
+            <div className="mx-auto grid max-w-6xl gap-6 px-4 py-8 text-sm text-muted sm:grid-cols-3">
+              <div>
+                <div className="font-display font-semibold text-ink mb-2">WikiNova</div>
+                <p>
+                  <EditableBlock
+                    blockKey="footer.tagline"
+                    as="span"
+                    defaultValue={blocks['footer.tagline']}
+                  />
+                </p>
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <Link href="/articles" className="hover:text-ink">Каталог статей</Link>
+                <Link href="/collections" className="hover:text-ink">Коллекции</Link>
+                <Link href="/graph" className="hover:text-ink">Карта знаний</Link>
+                <Link href="/request" className="hover:text-ink">Заявка на статью</Link>
+                <Link href="/contact" className="hover:text-ink">Контакты</Link>
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <Link href="/about" className="hover:text-ink">О проекте</Link>
+                <Link href="/rules" className="hover:text-ink">Правила редактирования</Link>
+                <span className="font-mono text-xs">
+                  <EditableBlock
+                    blockKey="footer.copyright"
+                    as="span"
+                    defaultValue={blocks['footer.copyright']}
+                  />
+                </span>
+              </div>
             </div>
-            <div className="flex flex-col gap-1.5">
-              <Link href="/articles" className="hover:text-ink">Каталог статей</Link>
-              <Link href="/collections" className="hover:text-ink">Коллекции</Link>
-              <Link href="/graph" className="hover:text-ink">Карта знаний</Link>
-              <Link href="/request" className="hover:text-ink">Заявка на статью</Link>
-              <Link href="/contact" className="hover:text-ink">Контакты</Link>
-            </div>
-            <div className="flex flex-col gap-1.5">
-              <Link href="/about" className="hover:text-ink">О проекте</Link>
-              <Link href="/rules" className="hover:text-ink">Правила редактирования</Link>
-              <span className="font-mono text-xs">
-                <EditableBlock
-                  blockKey="footer.copyright"
-                  as="span"
-                  defaultValue={blocks['footer.copyright']}
-                />
-              </span>
-            </div>
-          </div>
-        </footer>
-        <AssistantDock />
-      </div>
+          </footer>
+          <AssistantDock />
+        </div>
+      </AuthModalProvider>
     </Providers>
   );
 }

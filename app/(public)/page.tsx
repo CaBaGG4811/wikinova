@@ -1,202 +1,227 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowUpRight, BookOpen, Lightbulb, Sparkles } from 'lucide-react';
 import { db } from '@/lib/db';
 import { cardInclude } from '@/lib/article';
-import { getBlocks } from '@/lib/blocks';
 import { ArticleCard } from '@/components/article/ArticleCard';
-import { HeroSearch } from '@/components/HeroSearch';
-import { EditableBlock } from '@/components/admin/EditableBlock';
+import { HeroAskInput } from '@/components/home/HeroAskInput';
+import { AutoAuth } from '@/components/home/AutoAuth';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Главная',
-  description: 'Локальная энциклопедия WikiNova: статьи по науке, истории, технологиям и искусству.',
+  description:
+    'WikiNova — AI-поисковик знаний: спросите что угодно и получите ответ из статей локальной энциклопедии.',
 };
 
-export default async function HomePage() {
-  const [featured, fresh, categories, blocks] = await Promise.all([
+const POPULAR_QUESTIONS = [
+  'Как работает квантовый компьютер?',
+  'История Рима',
+  'Биография Пушкина',
+  'Что такое нейросеть?',
+  'Как устроен фотосинтез?',
+];
+
+const DAILY_FACTS = [
+  'У Сатурна столько лун, что их открытие продолжается каждый год — на сегодня их больше сотни.',
+  'Слово «энциклопедия» пришло из греческого и буквально значит «получение знаний о всём».',
+  'Первая версия Википедии запустилась 15 января 2001 года — и сразу на двух языках.',
+  'Банан — ягода, а клубника — нет: ботаника определяет плод по строению, а не по вкусу.',
+  'Свет от Солнца достигает Земли за 8 минут 20 секунд, но звезде на самом деле больше 4,5 млрд лет.',
+  'В человеческом мозге около 86 млрд нейронов — примерно столько же звёзд в Млечном Пути.',
+  'Самый короткий вооружённый конфликт в истории длился 38 минут: англо-танзанийская война 1896 года.',
+  'Самая древняя работающая библиотека — монастырская коллекция в Сен-Катберн, ей больше 1000 лет.',
+  'Миллион русских рублей весит тонну — купюры по 5000 рублей из золота не делают.',
+  'Первый веб-сайт в мире появился 6 августа 1991 года и описывал, как устроен сам веб.',
+  'Синий кит — самое крупное животное на Земле: его сердце размером с автомобиль.',
+  'В Японии есть остров оленей, где животные не боятся людей: их около 1200.',
+];
+
+function pickByDay<T>(items: T[]): T | null {
+  if (items.length === 0) return null;
+  const now = new Date();
+  const seed = now.getFullYear() * 372 + now.getMonth() * 31 + now.getDate();
+  return items[seed % items.length];
+}
+
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams?: { auth?: string; from?: string };
+}) {
+  const [dayPool, fresh, collections] = await Promise.all([
     db.article.findMany({
-      where: { status: 'published', featured: true },
+      where: { status: 'published', coverImage: { not: null } },
       include: cardInclude,
       orderBy: { views: 'desc' },
-      take: 3,
+      take: 12,
     }),
     db.article.findMany({
       where: { status: 'published' },
       include: cardInclude,
       orderBy: { publishedAt: 'desc' },
-      take: 9,
+      take: 6,
     }),
-    db.category.findMany({
-      include: { _count: { select: { articles: true } } },
-      orderBy: { articles: { _count: 'desc' } },
-      take: 8,
+    db.collection.findMany({
+      orderBy: { createdAt: 'desc' },
+      take: 3,
+      include: { _count: { select: { items: true } } },
     }),
-    getBlocks([
-      'home.hero.title',
-      'home.hero.subtitle',
-      'home.featured.title',
-      'home.fresh.title',
-      'home.categories.title',
-      'home.request.cta',
-    ]),
   ]);
 
-  const heroIds = new Set(featured.map((a) => a.id));
-  const heroCards = [...featured];
-  for (const a of fresh) {
-    if (heroCards.length >= 3) break;
-    if (!heroIds.has(a.id)) {
-      heroCards.push(a);
-      heroIds.add(a.id);
-    }
-  }
-  const freshList = fresh.filter((a) => !heroIds.has(a.id)).slice(0, 6);
+  const dayArticle = pickByDay(dayPool);
+  const fact = pickByDay(DAILY_FACTS);
 
   return (
-    <div>
-      <section className="stagger-item" style={{ animationDelay: '0ms' }}>
-        <div className="mx-auto max-w-6xl px-4 py-24 md:py-32">
-          <p className="mb-4 text-caption font-medium tracking-wide text-stone-500">
-            Локальная энциклопедия
-          </p>
-          <h1 className="font-display max-w-[15ch] text-5xl font-bold leading-[1.06] tracking-[-0.03em] lg:text-6xl">
-            <EditableBlock
-              blockKey="home.hero.title"
-              as="span"
-              defaultValue={blocks['home.hero.title']}
-            />
-          </h1>
-          <EditableBlock
-            blockKey="home.hero.subtitle"
-            as="p"
-            className="mt-5 max-w-[54ch] text-body text-stone-400"
-            multiline
-            defaultValue={blocks['home.hero.subtitle']}
-          />
-          <div className="mt-10 max-w-3xl">
-            <HeroSearch />
-          </div>
+    <div className="bg-white">
+      <AutoAuth mode={searchParams?.auth} />
+
+      <section className="flex min-h-[80vh] flex-col items-center justify-center px-4 pb-16 pt-24 text-center">
+        <span className="mb-6 inline-flex items-center gap-1.5 rounded-full bg-violet-100 px-3 py-1 text-xs font-semibold text-violet-700">
+          <Sparkles size={13} />
+          AI-поиск знаний
+        </span>
+        <h1 className="font-display max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          Что вы хотите узнать?
+        </h1>
+        <p className="mt-5 max-w-xl text-lg text-gray-500">
+          Задайте вопрос — мы найдём ответ в статьях WikiNova и подскажем, с чего начать.
+        </p>
+
+        <div className="mt-10 w-full">
+          <HeroAskInput />
         </div>
-      </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-8">
-        <div className="mb-6 flex items-end justify-between gap-4">
-          <h2 className="font-display text-h2 font-bold">
-            <EditableBlock
-              blockKey="home.featured.title"
-              as="span"
-              defaultValue={blocks['home.featured.title']}
-            />
-          </h2>
-          <Link
-            href="/articles"
-            className="text-caption font-medium text-primary transition-colors duration-150 hover:text-accent"
-          >
-            Весь каталог
-          </Link>
-        </div>
-        {heroCards.length === 0 ? (
-          <p className="rounded-lg border border-dashed border-line py-10 text-center text-caption text-muted">
-            Статей пока нет
-          </p>
-        ) : (
-          <div className="grid gap-8 lg:grid-cols-3">
-            <div className="lg:col-span-2">
-              <ArticleCard article={heroCards[0]} priority stretch />
-            </div>
-            <div className="flex flex-col gap-8">
-              {heroCards.slice(1, 3).map((a) => (
-                <div key={a.id} className="flex-1">
-                  <ArticleCard article={a} />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-      </section>
-
-      {freshList.length > 0 ? (
-        <section className="mx-auto max-w-6xl px-4 py-8">
-          <div className="mb-6 flex items-end justify-between gap-4">
-            <h2 className="font-display text-h2 font-bold">
-              <EditableBlock
-                blockKey="home.fresh.title"
-                as="span"
-                defaultValue={blocks['home.fresh.title']}
-              />
-            </h2>
+        <div className="mt-6 flex max-w-3xl flex-wrap justify-center gap-2">
+          {POPULAR_QUESTIONS.map((question) => (
             <Link
-              href="/articles?sort=new"
-              className="text-caption font-medium text-primary transition-colors duration-150 hover:text-accent"
+              key={question}
+              href={`/search?q=${encodeURIComponent(question)}`}
+              className="rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm text-gray-600 transition hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700"
             >
-              Все новые
-            </Link>
-          </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {freshList.map((a, i) => (
-              <div key={a.id} className="stagger-item" style={{ animationDelay: `${i * 60}ms` }}>
-                <ArticleCard article={a} />
-              </div>
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      <section className="mx-auto max-w-6xl px-4 py-8">
-        <h2 className="font-display mb-6 text-h2 font-bold">
-          <EditableBlock
-            blockKey="home.categories.title"
-            as="span"
-            defaultValue={blocks['home.categories.title']}
-          />
-        </h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {categories.map((c) => (
-            <Link
-              key={c.id}
-              href={`/category/${c.slug}`}
-              className="card p-4 transition-colors duration-150 hover:border-ink/30"
-            >
-              <div className="flex items-center justify-between gap-2">
-                <span className="font-display flex items-center gap-2 font-semibold">
-                  <span
-                    className="h-2 w-2 shrink-0 rounded-full"
-                    style={{ background: c.color }}
-                  />
-                  {c.name}
-                </span>
-                <span className="badge">{c._count.articles}</span>
-              </div>
-              {c.description ? (
-                <p className="mt-1.5 line-clamp-2 text-caption text-muted">{c.description}</p>
-              ) : null}
+              {question}
             </Link>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-8">
-        <div className="card flex flex-col items-start justify-between gap-4 p-6 sm:flex-row sm:items-center sm:p-8">
-          <div>
-            <h2 className="font-display text-h3 font-semibold">
-              <EditableBlock
-                blockKey="home.request.cta"
-                as="span"
-                defaultValue={blocks['home.request.cta']}
-              />
-            </h2>
-            <p className="mt-1 text-caption text-muted">
-              Опишите тему и уровень детализации, редакция подготовит материал.
-            </p>
+      <section className="mx-auto mt-32 max-w-6xl px-4">
+        <div className="grid gap-6 md:grid-cols-3">
+          <article className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md duration-300">
+            {dayArticle ? (
+              <Link
+                href={`/article/${dayArticle.slug}`}
+                className="relative block aspect-video overflow-hidden bg-gray-100"
+              >
+                <Image
+                  src={dayArticle.coverImage ?? '/logo.png'}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                />
+              </Link>
+            ) : (
+              <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-green-50 to-violet-50">
+                <BookOpen size={36} className="text-green-700" />
+              </div>
+            )}
+            <div className="p-5">
+              <span className="text-xs font-semibold uppercase tracking-wide text-violet-600">
+                Статья дня
+              </span>
+              {dayArticle ? (
+                <>
+                  <h3 className="mt-2 font-display text-lg font-bold leading-snug text-gray-900">
+                    <Link href={`/article/${dayArticle.slug}`} className="hover:text-green-700">
+                      {dayArticle.title}
+                    </Link>
+                  </h3>
+                  {dayArticle.excerpt ? (
+                    <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-gray-500">
+                      {dayArticle.excerpt}
+                    </p>
+                  ) : null}
+                  <Link
+                    href={`/article/${dayArticle.slug}`}
+                    className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-green-700 transition hover:text-green-800"
+                  >
+                    Читать <ArrowUpRight size={14} />
+                  </Link>
+                </>
+              ) : (
+                <p className="mt-2 text-sm text-gray-500">Статьи скоро появятся.</p>
+              )}
+            </div>
+          </article>
+
+          <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 shadow-sm">
+            <span className="text-xs font-semibold uppercase tracking-wide text-violet-600">
+              Факт дня
+            </span>
+            <div className="mt-3 flex gap-3">
+              <Lightbulb size={22} className="mt-0.5 shrink-0 text-violet-600" />
+              <p className="text-[15px] leading-relaxed text-gray-700">{fact}</p>
+            </div>
+            <p className="mt-4 text-xs text-gray-400">Каждый день — новый факт из энциклопедии.</p>
           </div>
-          <Link href="/request" className="btn-primary shrink-0">
-            Оставить заявку
-            <ArrowRight size={15} />
+
+          <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+            <span className="text-xs font-semibold uppercase tracking-wide text-violet-600">
+              Новое в коллекциях
+            </span>
+            {collections.length > 0 ? (
+              <ul className="mt-3 space-y-3">
+                {collections.map((c) => (
+                  <li key={c.id}>
+                    <Link
+                      href={`/collection/${c.id}`}
+                      className="flex items-start justify-between gap-2 text-sm text-gray-700 transition hover:text-green-700"
+                    >
+                      <span className="font-medium">{c.name}</span>
+                      <span className="shrink-0 text-xs text-gray-400">{c._count.items}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="mt-3 text-sm text-gray-500">Подборок пока нет — создайте свою.</p>
+            )}
+            <Link
+              href="/collections"
+              className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-green-700 transition hover:text-green-800"
+            >
+              Все коллекции <ArrowUpRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-24 max-w-6xl px-4 pb-4">
+        <div className="mb-6 flex items-end justify-between gap-4">
+          <h2 className="font-display text-h2 font-bold text-gray-900">Свежие статьи</h2>
+          <Link
+            href="/articles"
+            className="text-sm font-medium text-green-700 transition-colors hover:text-green-800"
+          >
+            Весь каталог
           </Link>
         </div>
+        {fresh.length === 0 ? (
+          <p className="rounded-xl border border-dashed border-gray-200 py-10 text-center text-sm text-gray-500">
+            Статей пока нет
+          </p>
+        ) : (
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {fresh.map((a, i) => (
+              <div key={a.id} className="stagger-item" style={{ animationDelay: `${i * 60}ms` }}>
+                <ArticleCard article={a} />
+              </div>
+            ))}
+          </div>
+        )}
       </section>
     </div>
   );

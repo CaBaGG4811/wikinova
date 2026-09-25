@@ -181,7 +181,7 @@ export function CollectionsManager() {
               />
               <button
                 type="button"
-                className="btn-secondary !px-2.5 shrink-0"
+                className="btn-secondary !border-violet-300 !text-violet-700 hover:!bg-violet-50 !px-2.5 shrink-0"
                 title="Описать с помощью ИИ"
                 disabled={aiBusy || !name.trim()}
                 onClick={() => void describeWithAi(name, null, setDescription)}
@@ -234,7 +234,7 @@ export function CollectionsManager() {
                       />
                       <button
                         type="button"
-                        className="btn-secondary !px-2.5 shrink-0"
+                        className="btn-secondary !border-violet-300 !text-violet-700 hover:!bg-violet-50 !px-2.5 shrink-0"
                         title="Описать с помощью ИИ"
                         disabled={aiBusy}
                         onClick={() => void describeWithAi(editName, row.id, setEditDescription)}

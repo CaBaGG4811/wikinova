@@ -3,33 +3,36 @@
 @tailwind utilities;
 
 :root {
-  --c-bg: 251 250 248;
-  --c-surface: 255 255 255;
-  --c-ink: 28 25 23;
-  --c-muted: 87 83 78;
-  --c-line: 231 229 228;
+  --c-bg: 255 255 255;
+  --c-surface: 249 250 251;
+  --c-ink: 17 24 39;
+  --c-muted: 75 85 99;
+  --c-line: 229 231 235;
   --c-primary: 22 101 52;
   --c-primary-fg: 255 255 255;
   --c-primary-soft: 220 252 231;
   --c-accent: 194 65 12;
   --c-accent-fg: 255 255 255;
+  --c-ai: 124 58 237;
   --c-danger: 185 28 28;
   --c-ok: 21 128 61;
-  --font-body: 'Source Serif 4';
+  --font-display: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono';
 }
 
 .dark {
-  --c-bg: 23 20 18;
-  --c-surface: 35 31 28;
-  --c-ink: 245 245 244;
-  --c-muted: 168 162 158;
-  --c-line: 41 37 36;
+  --c-bg: 17 24 39;
+  --c-surface: 24 31 41;
+  --c-ink: 243 244 246;
+  --c-muted: 156 163 175;
+  --c-line: 55 65 81;
   --c-primary: 74 222 128;
-  --c-primary-fg: 23 20 18;
+  --c-primary-fg: 17 24 39;
   --c-primary-soft: 34 63 47;
   --c-accent: 251 146 60;
-  --c-accent-fg: 23 20 18;
+  --c-accent-fg: 17 24 39;
+  --c-ai: 167 139 250;
   --c-danger: 248 113 113;
   --c-ok: 74 222 128;
 }
@@ -64,7 +67,7 @@ h1, h2, h3, h4, .font-display {
     transform: translateY(0) scale-95;
   }
   .btn-primary {
-    @apply btn bg-primary text-primary-fg hover:bg-primary/90;
+    @apply btn text-white bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 shadow-sm;
   }
   .btn-secondary {
     @apply btn border border-line bg-surface text-ink hover:border-primary/50 hover:bg-primary/5;

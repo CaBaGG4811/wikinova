@@ -1354,7 +1354,7 @@ export default function ArticleEditor({
               <div className="flex flex-wrap gap-1.5">
                 <button
                   type="button"
-                  className="btn-secondary !py-1 !px-2.5 text-xs"
+                  className="btn-secondary !border-violet-300 !text-violet-700 hover:!bg-violet-50 !py-1 !px-2.5 text-xs"
                   onClick={() => void suggestTags()}
                   disabled={autoTagsBusy}
                 >
@@ -1362,7 +1362,7 @@ export default function ArticleEditor({
                 </button>
                 <button
                   type="button"
-                  className="btn-secondary !py-1 !px-2.5 text-xs"
+                  className="btn-secondary !border-violet-300 !text-violet-700 hover:!bg-violet-50 !py-1 !px-2.5 text-xs"
                   onClick={() => void checkQuality()}
                   disabled={qualityBusy}
                 >
@@ -1371,7 +1371,7 @@ export default function ArticleEditor({
                 </button>
                 <button
                   type="button"
-                  className="btn-secondary !py-1 !px-2.5 text-xs"
+                  className="btn-secondary !border-violet-300 !text-violet-700 hover:!bg-violet-50 !py-1 !px-2.5 text-xs"
                   onClick={fillMetadata}
                   disabled={metaBusy}
                 >

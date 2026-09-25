@@ -22,6 +22,7 @@ const config: Config = {
         },
         danger: 'rgb(var(--c-danger) / <alpha-value>)',
         ok: 'rgb(var(--c-ok) / <alpha-value>)',
+        ai: 'rgb(var(--c-ai) / <alpha-value>)',
       },
       fontFamily: {
         display: ['var(--font-display)', 'sans-serif'],

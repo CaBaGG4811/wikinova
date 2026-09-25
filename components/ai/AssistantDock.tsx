@@ -177,7 +177,7 @@ export function AssistantDock() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="fixed bottom-5 right-5 z-40 w-14 h-14 rounded-xl border border-line bg-surface shadow-float flex items-center justify-center text-ink hover:border-ink/40 transition-colors duration-150"
+        className="fixed bottom-5 right-5 z-40 w-14 h-14 rounded-xl bg-gradient-to-br from-violet-600 to-purple-600 shadow-float flex items-center justify-center text-white hover:from-violet-700 hover:to-purple-700 transition-colors duration-150"
         aria-label="AI-ассистент"
         title="AI-ассистент"
       >
@@ -199,7 +199,7 @@ export function AssistantDock() {
           >
             <header className="h-14 px-4 border-b border-line flex items-center justify-between gap-3 shrink-0">
               <div className="flex items-center gap-2 min-w-0">
-                <Compass size={16} className="text-primary shrink-0" />
+                <Compass size={16} className="text-violet-600 shrink-0" />
                 <h2 className="font-display font-semibold text-base truncate">Ассистент</h2>
               </div>
               <div className="flex items-center gap-1 shrink-0">
