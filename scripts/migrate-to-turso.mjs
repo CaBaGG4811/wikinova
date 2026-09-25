@@ -55,9 +55,12 @@ const ddl = readFileSync(ddlPath, 'utf8');
 
 console.log('1) Создаю схему в Turso...');
 const statements = ddl
+  .split('\n')
+  .filter((line) => !line.trim().startsWith('--'))
+  .join('\n')
   .split(';')
   .map((s) => s.trim())
-  .filter((s) => s.length > 0 && !s.startsWith('--'));
+  .filter((s) => s.length > 0);
 for (const stmt of statements) {
   try {
     await remote.execute(stmt);

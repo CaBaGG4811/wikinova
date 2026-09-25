@@ -14,3 +14,7 @@ next-env.d.ts
 
 .vercel
 devlog.txt
+deploy-log.txt
+patch-body.json
+patch-resp.json
+vercel-project.json
