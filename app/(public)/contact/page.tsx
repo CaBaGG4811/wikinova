@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Контакты',
-  description: 'Связаться с редакцией WikiNova.',
+  description: 'Связаться с редакцией ГАЛИЛЕО.',
 };
 
 export default async function ContactPage() {

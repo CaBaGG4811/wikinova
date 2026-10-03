@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Sidebar } from '@/components/layout/Sidebar';
+import { TopLogin } from '@/components/layout/TopLogin';
 import { AuthModalProvider } from '@/components/auth/AuthModal';
 import { AssistantDock } from '@/components/ai/AssistantDock';
 import { Providers } from '@/components/Providers';
@@ -14,13 +15,16 @@ export default async function PublicLayout({ children }: { children: React.React
   return (
     <Providers>
       <AuthModalProvider>
-        <div className="flex min-h-screen flex-col bg-white pl-16">
+        <div className="flex min-h-screen flex-col bg-white pl-16 md:pl-60">
           <Sidebar />
+          <div className="fixed right-6 top-4 z-40">
+            <TopLogin />
+          </div>
           <main className="flex-1">{children}</main>
           <footer className="mt-16 border-t border-line">
             <div className="mx-auto grid max-w-6xl gap-6 px-4 py-8 text-sm text-muted sm:grid-cols-3">
               <div>
-                <div className="font-display font-semibold text-ink mb-2">WikiNova</div>
+                <div className="font-display font-semibold text-ink mb-2">ГАЛИЛЕО</div>
                 <p>
                   <EditableBlock
                     blockKey="footer.tagline"

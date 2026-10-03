@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, BookOpen, Lightbulb, Sparkles } from 'lucide-react';
+import { ArrowUpRight, BookOpen, Lightbulb } from 'lucide-react';
 import { db } from '@/lib/db';
 import { cardInclude } from '@/lib/article';
 import { ArticleCard } from '@/components/article/ArticleCard';
@@ -13,7 +13,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Главная',
   description:
-    'WikiNova — AI-поисковик знаний: спросите что угодно и получите ответ из статей локальной энциклопедии.',
+    'ГАЛИЛЕО — AI-поисковик знаний: спросите что угодно и получите ответ из статей локальной энциклопедии.',
 };
 
 const POPULAR_QUESTIONS = [
@@ -80,36 +80,35 @@ export default async function HomePage({
 
       <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-4 pb-16 pt-24">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-1/2 h-[500px] w-[920px] max-w-[130vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(34_197_94/0.22),rgb(16_185_129/0.08),transparent)] blur-3xl" />
-          <div className="absolute left-1/2 top-[44%] h-[320px] w-[540px] max-w-[110vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(124_58_237/0.13),transparent)] blur-3xl" />
+          <div className="absolute left-1/2 top-0 h-[520px] w-[960px] max-w-[130vw] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(174_140_192/0.28),rgb(76_132_188/0.12),transparent)] blur-3xl" />
+          <div className="absolute left-1/2 top-[44%] h-[320px] w-[540px] max-w-[110vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(76_132_188/0.14),transparent)] blur-3xl" />
         </div>
 
         <div className="relative z-10 flex w-full max-w-3xl flex-col items-center text-center">
-          <span className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-violet-200/70 bg-violet-100/80 px-3 py-1 text-xs font-semibold text-violet-700">
-            <Sparkles size={13} />
-            AI-поиск знаний
-          </span>
-          <h1 className="font-display max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          <h1 className="font-display max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl">
             Что вы хотите узнать?
           </h1>
-          <p className="mt-5 max-w-xl text-lg text-gray-500">
-            Задайте вопрос — мы найдём ответ в статьях WikiNova и подскажем, с чего начать.
+          <p className="mt-5 max-w-xl text-lg text-muted">
+            Задайте вопрос Ассистенту или найдите ответ в статьях ГАЛИЛЕО.
           </p>
 
           <div className="mt-10 w-full">
             <HeroAskInput />
           </div>
 
-          <div className="mt-6 flex max-w-3xl flex-wrap justify-center gap-2">
-            {POPULAR_QUESTIONS.map((question) => (
-              <Link
-                key={question}
-                href={`/search?q=${encodeURIComponent(question)}`}
-                className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-600 shadow-[0_1px_2px_rgb(17_24_39/0.05)] transition hover:border-green-300 hover:text-green-800 hover:shadow-[0_6px_16px_-8px_rgb(22_101_52/0.55)]"
-              >
-                {question}
-              </Link>
-            ))}
+          <div className="mt-8 w-full max-w-2xl text-left">
+            <div className="mb-3 text-sm font-semibold text-muted">Самые популярные вопросы</div>
+            <div className="flex flex-wrap gap-2">
+              {POPULAR_QUESTIONS.map((question) => (
+                <Link
+                  key={question}
+                  href={`/search?q=${encodeURIComponent(question)}`}
+                  className="rounded-xl bg-accent/[0.08] px-3.5 py-2 text-sm text-ink transition hover:bg-accent/[0.16] hover:text-accent"
+                >
+                  {question}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -131,18 +130,18 @@ export default async function HomePage({
                 />
               </Link>
             ) : (
-              <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-green-50 to-violet-50">
-                <BookOpen size={36} className="text-green-700" />
+              <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-primary-soft to-accent/10">
+                <BookOpen size={36} className="text-accent" />
               </div>
             )}
             <div className="p-5">
-              <span className="text-xs font-semibold uppercase tracking-wide text-violet-600">
+              <span className="text-xs font-semibold uppercase tracking-wide text-accent">
                 Статья дня
               </span>
               {dayArticle ? (
                 <>
                   <h3 className="mt-2 font-display text-lg font-bold leading-snug text-gray-900">
-                    <Link href={`/article/${dayArticle.slug}`} className="hover:text-green-700">
+                    <Link href={`/article/${dayArticle.slug}`} className="hover:text-accent">
                       {dayArticle.title}
                     </Link>
                   </h3>
@@ -153,7 +152,7 @@ export default async function HomePage({
                   ) : null}
                   <Link
                     href={`/article/${dayArticle.slug}`}
-                    className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-green-700 transition hover:text-green-800"
+                    className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-accent transition hover:text-accent"
                   >
                     Читать <ArrowUpRight size={14} />
                   </Link>
@@ -165,18 +164,18 @@ export default async function HomePage({
           </article>
 
           <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-sm">
-            <span className="text-xs font-semibold uppercase tracking-wide text-violet-600">
+            <span className="text-xs font-semibold uppercase tracking-wide text-accent">
               Факт дня
             </span>
             <div className="mt-3 flex gap-3">
-              <Lightbulb size={22} className="mt-0.5 shrink-0 text-violet-600" />
+              <Lightbulb size={22} className="mt-0.5 shrink-0 text-accent" />
               <p className="text-[15px] leading-relaxed text-gray-700">{fact}</p>
             </div>
             <p className="mt-4 text-xs text-gray-400">Каждый день — новый факт из энциклопедии.</p>
           </div>
 
           <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
-            <span className="text-xs font-semibold uppercase tracking-wide text-violet-600">
+            <span className="text-xs font-semibold uppercase tracking-wide text-accent">
               Новое в коллекциях
             </span>
             {collections.length > 0 ? (
@@ -185,7 +184,7 @@ export default async function HomePage({
                   <li key={c.id}>
                     <Link
                       href={`/collection/${c.id}`}
-                      className="flex items-start justify-between gap-2 text-sm text-gray-700 transition hover:text-green-700"
+                      className="flex items-start justify-between gap-2 text-sm text-gray-700 transition hover:text-accent"
                     >
                       <span className="font-medium">{c.name}</span>
                       <span className="shrink-0 text-xs text-gray-400">{c._count.items}</span>
@@ -198,7 +197,7 @@ export default async function HomePage({
             )}
             <Link
               href="/collections"
-              className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-green-700 transition hover:text-green-800"
+              className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent transition hover:text-accent"
             >
               Все коллекции <ArrowUpRight size={14} />
             </Link>
@@ -211,7 +210,7 @@ export default async function HomePage({
           <h2 className="font-display text-h2 font-bold text-gray-900">Свежие статьи</h2>
           <Link
             href="/articles"
-            className="text-sm font-medium text-green-700 transition-colors hover:text-green-800"
+            className="text-sm font-medium text-accent transition-colors hover:text-accent"
           >
             Весь каталог
           </Link>

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import Link from 'next/link';
-import { BookOpen, Check, Copy, Square } from 'lucide-react';
+import { BookOpen, Check, Copy, Sparkles, Square } from 'lucide-react';
 import type { RagSource } from '@/types';
 import { Markdown } from '@/components/ai/Markdown';
 import { cn } from '@/lib/utils';
@@ -108,43 +108,58 @@ export function ChatPanel({
 
       <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto px-4 py-4">
         {messages.length === 0 ? (
-          <div className="py-2">{empty}</div>
+          <div className="flex min-h-full flex-col py-2">{empty}</div>
         ) : (
           <div className="space-y-4">
-            {messages.map((m, i) => (
-              <div
-                key={`${i}-${m.role}`}
-                className={cn('pt-4 first:pt-0 border-t border-line first:border-0')}
-              >
-                <div className="flex items-center justify-between gap-2 mb-1.5">
-                  <span className="text-xs font-medium text-muted font-display">
-                    {m.role === 'user' ? 'Вы' : 'Ассистент'}
-                  </span>
-                  {m.role === 'assistant' && m.content && !m.failed && i !== lastStreamingIndex ? (
-                    <CopyAnswerButton text={m.content} />
-                  ) : null}
+            {messages.map((m, i) =>
+              m.role === 'user' ? (
+                <div key={`${i}-user`} className="flex justify-end">
+                  <p className="max-w-[85%] whitespace-pre-wrap break-words rounded-2xl rounded-br-sm bg-gradient-to-r from-primary to-accent px-4 py-2.5 text-sm leading-relaxed text-white shadow-[0_6px_16px_-10px_rgb(76_132_188/0.8)]">
+                    {m.content}
+                  </p>
                 </div>
+              ) : (
+                <div key={`${i}-assistant`} className="flex gap-2.5">
+                  <div
+                    className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-ai text-white"
+                    aria-hidden="true"
+                  >
+                    <Sparkles size={14} />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="mb-1 flex items-center justify-between gap-2">
+                      <span className="text-xs font-semibold text-accent font-display">
+                        Ассистент
+                      </span>
+                      {m.content && !m.failed && i !== lastStreamingIndex ? (
+                        <CopyAnswerButton text={m.content} />
+                      ) : null}
+                    </div>
 
-                {m.role === 'user' ? (
-                  <p className="text-sm text-ink whitespace-pre-wrap break-words">{m.content}</p>
-                ) : m.failed ? (
-                  <p className="text-sm text-danger whitespace-pre-wrap break-words">{m.content}</p>
-                ) : m.content ? (
-                  <div>
-                    <Markdown>{m.content}</Markdown>
-                    {i === lastStreamingIndex ? (
-                      <div className="mt-2">
+                    {m.failed ? (
+                      <p className="text-sm text-danger whitespace-pre-wrap break-words">
+                        {m.content}
+                      </p>
+                    ) : m.content ? (
+                      <div className="rounded-2xl rounded-tl-sm border border-line bg-white px-3.5 py-2.5">
+                        <Markdown>{m.content}</Markdown>
+                        {i === lastStreamingIndex ? (
+                          <div className="mt-2">
+                            <StreamBar />
+                          </div>
+                        ) : null}
+                      </div>
+                    ) : (
+                      <div className="inline-flex rounded-2xl rounded-tl-sm border border-line bg-white px-3.5 py-3">
                         <StreamBar />
                       </div>
-                    ) : null}
-                  </div>
-                ) : i === lastStreamingIndex ? (
-                  <StreamBar />
-                ) : null}
+                    )}
 
-                {m.sources?.length ? <SourceList sources={m.sources} /> : null}
-              </div>
-            ))}
+                    {m.sources?.length ? <SourceList sources={m.sources} /> : null}
+                  </div>
+                </div>
+              ),
+            )}
           </div>
         )}
       </div>

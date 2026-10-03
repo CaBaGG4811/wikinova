@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Поиск',
-  description: 'Поиск по статьям WikiNova.',
+  description: 'Поиск по статьям ГАЛИЛЕО.',
 };
 
 interface Props {

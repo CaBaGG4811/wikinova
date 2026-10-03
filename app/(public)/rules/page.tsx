@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Правила редактирования',
-  description: 'Правила WikiNova: тон, источники, статусы, конфликты правок.',
+  description: 'Правила ГАЛИЛЕО: тон, источники, статусы, конфликты правок.',
 };
 
 export default async function RulesPage() {

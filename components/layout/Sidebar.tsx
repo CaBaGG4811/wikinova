@@ -3,17 +3,21 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
-import { BookOpen, Home, Library, LogOut, User } from 'lucide-react';
+import { LogOut } from 'lucide-react';
 import { useAuthModal } from '@/components/auth/AuthModal';
+import {
+  GalileoAssistantIcon,
+  GalileoBookIcon,
+  GalileoCollectionsIcon,
+  GalileoHomeIcon,
+  GalileoUserIcon,
+} from '@/components/layout/NavIcons';
 
 const navItems = [
-  { href: '/', label: 'Главная', icon: Home },
-  { href: '/articles', label: 'Статьи', icon: BookOpen },
-  { href: '/collections', label: 'Коллекции', icon: Library },
+  { href: '/', label: 'Главная', icon: GalileoHomeIcon },
+  { href: '/articles', label: 'Статьи', icon: GalileoBookIcon },
+  { href: '/collections', label: 'Коллекции', icon: GalileoCollectionsIcon },
 ];
-
-const labelClass =
-  'text-sm font-medium opacity-0 transition-opacity duration-300 group-hover:opacity-100';
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -22,25 +26,35 @@ export function Sidebar() {
 
   return (
     <aside
-      className="group fixed inset-y-0 left-0 z-50 flex w-16 flex-col overflow-hidden whitespace-nowrap border-r border-line bg-white transition-all duration-300 ease-in-out hover:w-60"
+      className="fixed inset-y-0 left-0 z-50 flex w-16 flex-col border-r border-line bg-white md:w-60"
       aria-label="Боковая навигация"
     >
       <Link
         href="/"
-        className="flex h-16 shrink-0 items-center gap-3 px-4 transition-colors hover:bg-gray-50"
-        aria-label="WikiNova — на главную"
+        className="flex h-16 shrink-0 items-center gap-2.5 px-4 transition-colors hover:bg-surface"
+        aria-label="ГАЛИЛЕО — на главную"
       >
         <img
           src="/logo.png"
           alt=""
-          className="h-8 w-8 shrink-0 object-contain drop-shadow-[0_2px_8px_rgb(34_197_94/0.45)]"
+          className="h-8 w-8 shrink-0 object-contain drop-shadow-[0_2px_10px_rgb(84_92_161/0.35)]"
         />
-        <span className="font-display text-lg font-extrabold tracking-tight text-gray-900 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          WikiNova
+        <span className="font-display text-lg font-extrabold tracking-tight text-ink hidden md:inline">
+          ГАЛИЛЕО
         </span>
       </Link>
 
       <nav className="mt-3 flex flex-col gap-1 px-2" aria-label="Основные разделы">
+        <button
+          type="button"
+          onClick={() => window.dispatchEvent(new CustomEvent('galileo:assistant'))}
+          className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900"
+          aria-label="Открыть ассистента"
+        >
+          <GalileoAssistantIcon size={22} />
+          <span className="hidden text-sm font-medium md:inline">Ассистент</span>
+        </button>
+
         {navItems.map((item) => {
           const active =
             item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
@@ -49,14 +63,14 @@ export function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`group/item flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors ${
+              className={`flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors ${
                 active
-                  ? 'bg-green-50 text-green-700 shadow-[0_4px_16px_-8px_rgb(22_101_52/0.65)]'
+                  ? 'bg-primary-soft/70 text-primary shadow-[0_4px_16px_-8px_rgb(76_132_188/0.55)]'
                   : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
               }`}
             >
-              <Icon size={20} className="shrink-0" />
-              <span className={labelClass}>{item.label}</span>
+              <Icon size={22} />
+              <span className="hidden text-sm font-medium md:inline">{item.label}</span>
             </Link>
           );
         })}
@@ -67,30 +81,30 @@ export function Sidebar() {
           <>
             <Link
               href="/profile"
-              className="group/item flex items-center gap-3 rounded-lg px-3 py-2.5 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900"
+              className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900"
             >
-              <User size={20} className="shrink-0" />
-              <span className={labelClass}>
+              <GalileoUserIcon size={22} />
+              <span className="hidden truncate text-sm font-medium md:inline">
                 {session.user.name ?? session.user.email ?? 'Профиль'}
               </span>
             </Link>
             <button
               type="button"
               onClick={() => void signOut({ callbackUrl: '/' })}
-              className="group/item flex items-center gap-3 rounded-lg px-3 py-2.5 text-gray-600 transition-colors hover:bg-gray-100 hover:text-red-600"
+              className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-gray-600 transition-colors hover:bg-gray-100 hover:text-red-600"
             >
               <LogOut size={20} className="shrink-0" />
-              <span className={labelClass}>Выйти</span>
+              <span className="hidden text-sm font-medium md:inline">Выйти</span>
             </button>
           </>
         ) : (
           <button
             type="button"
             onClick={() => open('login')}
-            className="group/item flex items-center gap-3 rounded-lg bg-gradient-to-r from-green-600 to-emerald-600 px-3 py-2.5 text-white shadow-[0_8px_20px_-8px_rgb(22_101_52/0.8)] transition hover:from-green-700 hover:to-emerald-700"
+            className="flex items-center gap-3 rounded-lg bg-gradient-to-r from-primary to-accent px-3 py-2.5 text-white shadow-[0_8px_20px_-8px_rgb(76_132_188/0.8)] transition hover:from-[#41719f] hover:to-[#4a5193]"
           >
-            <User size={20} className="shrink-0" />
-            <span className={labelClass}>Войти</span>
+            <GalileoUserIcon size={22} />
+            <span className="hidden text-sm font-semibold md:inline">Войти</span>
           </button>
         )}
       </div>

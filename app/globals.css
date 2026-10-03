@@ -4,16 +4,16 @@
 
 :root {
   --c-bg: 255 255 255;
-  --c-surface: 249 250 251;
-  --c-ink: 17 24 39;
-  --c-muted: 75 85 99;
-  --c-line: 229 231 235;
-  --c-primary: 22 101 52;
+  --c-surface: 246 248 251;
+  --c-ink: 4 36 64;
+  --c-muted: 92 108 126;
+  --c-line: 219 228 239;
+  --c-primary: 76 132 188;
   --c-primary-fg: 255 255 255;
-  --c-primary-soft: 220 252 231;
-  --c-accent: 194 65 12;
+  --c-primary-soft: 232 240 249;
+  --c-accent: 84 92 161;
   --c-accent-fg: 255 255 255;
-  --c-ai: 124 58 237;
+  --c-ai: 174 140 192;
   --c-danger: 185 28 28;
   --c-ok: 21 128 61;
   --font-display: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -22,17 +22,17 @@
 }
 
 .dark {
-  --c-bg: 17 24 39;
-  --c-surface: 24 31 41;
-  --c-ink: 243 244 246;
-  --c-muted: 156 163 175;
-  --c-line: 55 65 81;
-  --c-primary: 74 222 128;
-  --c-primary-fg: 17 24 39;
-  --c-primary-soft: 34 63 47;
-  --c-accent: 251 146 60;
-  --c-accent-fg: 17 24 39;
-  --c-ai: 167 139 250;
+  --c-bg: 4 36 64;
+  --c-surface: 11 50 83;
+  --c-ink: 240 245 250;
+  --c-muted: 162 190 220;
+  --c-line: 27 66 100;
+  --c-primary: 162 190 220;
+  --c-primary-fg: 4 36 64;
+  --c-primary-soft: 20 62 100;
+  --c-accent: 174 140 192;
+  --c-accent-fg: 4 36 64;
+  --c-ai: 174 140 192;
   --c-danger: 248 113 113;
   --c-ok: 74 222 128;
 }
@@ -67,11 +67,11 @@ h1, h2, h3, h4, .font-display {
     transform: translateY(0) scale-95;
   }
   .btn-primary {
-    @apply btn text-white bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700;
-    box-shadow: 0 6px 18px -6px rgb(22 101 52 / 0.5), 0 1px 2px rgb(17 24 39 / 0.06);
+    @apply btn text-white bg-gradient-to-r from-primary to-accent hover:from-[#41719f] hover:to-[#4a5193];
+    box-shadow: 0 6px 18px -6px rgb(76 132 188 / 0.5), 0 1px 2px rgb(4 36 64 / 0.08);
   }
   .btn-primary:hover:not(:disabled) {
-    box-shadow: 0 10px 26px -6px rgb(22 101 52 / 0.6), 0 1px 2px rgb(17 24 39 / 0.06);
+    box-shadow: 0 10px 26px -6px rgb(76 132 188 / 0.6), 0 1px 2px rgb(4 36 64 / 0.08);
   }
   .btn-secondary {
     @apply btn border border-line bg-surface text-ink hover:border-primary/50 hover:bg-primary/5;

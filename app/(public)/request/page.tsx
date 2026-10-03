@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Заказать статью',
-  description: 'Заявка редакции WikiNova на новую энциклопедическую статью.',
+  description: 'Заявка редакции ГАЛИЛЕО на новую энциклопедическую статью.',
 };
 
 export default async function RequestPage() {

@@ -172,7 +172,7 @@ function AuthModal({
       <div
         role="dialog"
         aria-modal="true"
-        aria-label={mode === 'login' ? 'Вход в WikiNova' : 'Регистрация в WikiNova'}
+        aria-label={mode === 'login' ? 'Вход в ГАЛИЛЕО' : 'Регистрация в ГАЛИЛЕО'}
         className="relative w-full max-w-md rounded-2xl bg-white p-8 shadow-2xl"
       >
         <button
@@ -185,7 +185,7 @@ function AuthModal({
         </button>
 
         <h2 className="font-display text-xl font-extrabold tracking-tight text-gray-900">
-          {mode === 'login' ? 'Вход в WikiNova' : 'Регистрация в WikiNova'}
+          {mode === 'login' ? 'Вход в ГАЛИЛЕО' : 'Регистрация в ГАЛИЛЕО'}
         </h2>
         <p className="mt-1 text-sm text-gray-500">
           {mode === 'login'
@@ -201,7 +201,7 @@ function AuthModal({
               </label>
               <input
                 id="auth-name"
-                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-900 outline-none transition focus:border-violet-500 focus:bg-white focus:ring-4 focus:ring-violet-100"
+                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-900 outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/15"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Ваше имя"
@@ -216,7 +216,7 @@ function AuthModal({
             </label>
             <input
               id="auth-email"
-              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-900 outline-none transition focus:border-violet-500 focus:bg-white focus:ring-4 focus:ring-violet-100"
+              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-900 outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/15"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -231,7 +231,7 @@ function AuthModal({
             </label>
             <input
               id="auth-password"
-              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-900 outline-none transition focus:border-violet-500 focus:bg-white focus:ring-4 focus:ring-violet-100"
+              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-900 outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/15"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -245,7 +245,7 @@ function AuthModal({
           <button
             type="submit"
             disabled={busy}
-            className="w-full rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 px-4 py-3 text-sm font-semibold text-white shadow-md transition hover:from-green-700 hover:to-emerald-700 disabled:opacity-60"
+            className="w-full rounded-xl bg-gradient-to-r from-primary to-accent px-4 py-3 text-sm font-semibold text-white shadow-md transition hover:from-[#41719f] hover:to-[#4a5193] disabled:opacity-60"
           >
             {busy ? 'Подождите…' : mode === 'login' ? 'Войти' : 'Создать аккаунт'}
           </button>
@@ -297,7 +297,7 @@ function AuthModal({
               setNotice(null);
               setMode(mode === 'login' ? 'register' : 'login');
             }}
-            className="font-semibold text-violet-600 underline underline-offset-2 hover:text-violet-700"
+            className="font-semibold text-accent underline underline-offset-2 hover:text-accent"
           >
             {mode === 'login' ? 'Зарегистрироваться' : 'Войти'}
           </button>

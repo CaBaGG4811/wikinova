@@ -7,11 +7,11 @@ export const dynamic = 'force-dynamic';
 const SETTINGS_KEY = 'site_settings';
 
 const defaults = {
-  siteName: 'WikiNova',
+  siteName: 'ГАЛИЛЕО',
   logo: '',
   primaryColor: '#166534',
   accentColor: '#C2410C',
-  seoDefaultTitle: 'WikiNova',
+  seoDefaultTitle: 'ГАЛИЛЕО',
   seoDefaultDescription: 'Локальная энциклопедия: статьи, категории, AI-ассистент.',
   socials: { telegram: '', vk: '', youtube: '' },
   homeText: '',

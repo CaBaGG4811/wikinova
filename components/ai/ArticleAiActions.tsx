@@ -275,7 +275,7 @@ export function ArticleAiActions({
         <button
           type="button"
           onClick={() => onToggleSummary?.()}
-          className={cn('btn-secondary !py-1.5 !px-2.5 text-sm', summaryOpen && 'border-violet-400 text-violet-600')}
+          className={cn('btn-secondary !py-1.5 !px-2.5 text-sm', summaryOpen && 'border-accent/50 text-accent')}
           aria-expanded={summaryOpen ?? false}
         >
           <AlignLeft size={14} />
@@ -285,7 +285,7 @@ export function ArticleAiActions({
         <button
           type="button"
           onClick={() => setAskOpen(true)}
-          className={cn('btn-secondary !py-1.5 !px-2.5 text-sm', askOpen && 'border-violet-400 text-violet-600')}
+          className={cn('btn-secondary !py-1.5 !px-2.5 text-sm', askOpen && 'border-accent/50 text-accent')}
           aria-expanded={askOpen}
         >
           <MessageCircle size={14} />

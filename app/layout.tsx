@@ -21,7 +21,7 @@ const mono = {
 };
 
 export const metadata: Metadata = {
-  title: { default: 'WikiNova — локальная энциклопедия', template: '%s · WikiNova' },
+  title: { default: 'ГАЛИЛЕО — локальная энциклопедия', template: '%s · ГАЛИЛЕО' },
   description: 'Современная локальная энциклопедия: статьи, категории, AI-ассистент.',
   icons: { icon: [{ url: '/logo.png', type: 'image/png' }] },
 };

@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'О проекте',
-  description: 'Как устроена WikiNova: роли, редакционный процесс, принципы материалов.',
+  description: 'Как устроена ГАЛИЛЕО: роли, редакционный процесс, принципы материалов.',
 };
 
 export default async function AboutPage() {

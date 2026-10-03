@@ -90,7 +90,7 @@ async function session(email, password) {
   const eSave = await fetch(`${B}/api/blocks`, {
     method: 'PATCH',
     headers: ehdr,
-    body: JSON.stringify({ key: 'footer.copyright', value: '© WikiNova, 2026 (ред.)' }),
+    body: JSON.stringify({ key: 'footer.copyright', value: '© ГАЛИЛЕО, 2026 (ред.)' }),
   });
   const eData = await j(eSave);
   ok(eSave.status === 200 && eData?.ok, 'PATCH editor allowed', `val=${clip(eData?.value)}`);
@@ -120,11 +120,11 @@ async function session(email, password) {
 
   // text presence for seeded defaults / saved
   const about = await (await fetch(B + '/about')).text();
-  ok(about.includes('О проекте WikiNova') || about.includes('about.title') || about.includes('О проекте'), 'about title present', clip(about.includes('О проекте WikiNova') ? 'default' : 'other'));
+  ok(about.includes('О проекте ГАЛИЛЕО') || about.includes('about.title') || about.includes('О проекте'), 'about title present', clip(about.includes('О проекте ГАЛИЛЕО') ? 'default' : 'other'));
   const contact = await (await fetch(B + '/contact')).text();
   ok(contact.includes('hello@wikinova.local') || contact.includes('Связаться с нами') || contact.includes('Контакты'), 'contact content', '');
   const rules = await (await fetch(B + '/rules')).text();
-  ok(rules.includes('Правила WikiNova') || rules.includes('Правила'), 'rules content', '');
+  ok(rules.includes('Правила ГАЛИЛЕО') || rules.includes('Правила'), 'rules content', '');
   const request = await (await fetch(B + '/request')).text();
   ok(request.includes('Заказать статью'), 'request content', '');
 

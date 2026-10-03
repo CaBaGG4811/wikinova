@@ -12,7 +12,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Профиль',
-  description: 'Профиль читателя WikiNova: закладки, лайки и заявки.',
+  description: 'Профиль читателя ГАЛИЛЕО: закладки, лайки и заявки.',
 };
 
 const requestLabels: Record<string, string> = {

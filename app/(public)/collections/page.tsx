@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Коллекции',
-  description: 'Личные коллекции статей WikiNova.',
+  description: 'Личные коллекции статей ГАЛИЛЕО.',
 };
 
 export default async function CollectionsPage() {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Compass, X } from 'lucide-react';
+import { Sparkles, X } from 'lucide-react';
 import { ChatPanel, type UiChatMessage } from '@/components/ai/ChatPanel';
 import { asSources, isAbortError, readSse } from '@/lib/ai/stream-client';
 
@@ -172,16 +172,27 @@ export function AssistantDock() {
     [messages, streaming],
   );
 
+  useEffect(() => {
+    function onOpen(e: Event) {
+      setOpen(true);
+      const detail = (e as CustomEvent).detail as { question?: unknown } | null;
+      const question = typeof detail?.question === 'string' ? detail.question.trim() : '';
+      if (question) void send(question);
+    }
+    window.addEventListener('galileo:assistant', onOpen);
+    return () => window.removeEventListener('galileo:assistant', onOpen);
+  }, [send]);
+
   return (
     <>
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="fixed bottom-5 right-5 z-40 w-14 h-14 rounded-xl bg-gradient-to-br from-violet-600 to-purple-600 shadow-float flex items-center justify-center text-white hover:from-violet-700 hover:to-purple-700 transition-colors duration-150"
-        aria-label="AI-ассистент"
-        title="AI-ассистент"
+        className="fixed bottom-5 right-5 z-40 w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-ai shadow-[0_10px_30px_-8px_rgb(84_92_161/0.6)] flex items-center justify-center text-white hover:from-[#4a5193] hover:to-[#9c78b2] transition-colors duration-150"
+        aria-label="Ассистент ГАЛИЛЕО"
+        title="Ассистент ГАЛИЛЕО"
       >
-        <Compass size={22} />
+        <Sparkles size={22} />
       </button>
 
       {open ? (
@@ -192,15 +203,22 @@ export function AssistantDock() {
             aria-hidden="true"
           />
           <aside
-            className="fixed right-0 top-0 z-50 h-full w-full sm:w-[420px] border-l border-line bg-surface shadow-float flex flex-col animate-slide-in-right"
+            className="fixed right-0 top-0 z-50 h-full w-full sm:w-[420px] border-l border-line bg-white shadow-float flex flex-col animate-slide-in-right"
             role="dialog"
             aria-modal="true"
             aria-label="Ассистент"
           >
-            <header className="h-14 px-4 border-b border-line flex items-center justify-between gap-3 shrink-0">
-              <div className="flex items-center gap-2 min-w-0">
-                <Compass size={16} className="text-violet-600 shrink-0" />
-                <h2 className="font-display font-semibold text-base truncate">Ассистент</h2>
+            <header className="h-16 px-4 border-b border-line flex items-center justify-between gap-3 shrink-0 bg-white">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-ai text-white shadow-[0_6px_16px_-8px_rgb(84_92_161/0.7)]">
+                  <Sparkles size={17} />
+                </div>
+                <div className="min-w-0 leading-tight">
+                  <h2 className="font-display font-bold text-base truncate text-ink">
+                    Ассистент ГАЛИЛЕО
+                  </h2>
+                  <p className="text-xs text-muted truncate">Отвечает по статьям энциклопедии</p>
+                </div>
               </div>
               <div className="flex items-center gap-1 shrink-0">
                 <button
@@ -224,16 +242,23 @@ export function AssistantDock() {
                 }}
                 onStop={stop}
                 empty={
-                  <div className="space-y-4">
-                    <p className="text-sm text-muted">
-                      Отвечаю по материалам вики. Задайте вопрос или выберите пример ниже.
+                  <div className="flex flex-1 flex-col items-center justify-center px-2 text-center">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-accent to-ai text-white shadow-[0_10px_26px_-10px_rgb(84_92_161/0.7)]">
+                      <Sparkles size={24} />
+                    </div>
+                    <p className="mt-4 font-display text-lg font-bold text-ink">
+                      Чем я могу помочь?
                     </p>
-                    <div className="flex flex-wrap gap-1.5">
+                    <p className="mt-1.5 max-w-[300px] text-sm text-muted">
+                      Отвечаю по материалам энциклопедии ГАЛИЛЕО. Задайте вопрос или выберите
+                      пример ниже.
+                    </p>
+                    <div className="mt-5 flex w-full flex-col gap-2">
                       {EXAMPLE_QUESTIONS.map((q) => (
                         <button
                           key={q}
                           type="button"
-                          className="btn-secondary !py-1.5 !px-3 text-xs text-left"
+                          className="rounded-xl border border-line bg-surface px-3.5 py-2.5 text-left text-sm text-ink transition hover:border-accent/50 hover:bg-accent/10 hover:text-accent"
                           onClick={() => void send(q)}
                         >
                           {q}

@@ -16,11 +16,11 @@ interface SiteSettings {
 }
 
 const defaults: SiteSettings = {
-  siteName: 'WikiNova',
+  siteName: 'ГАЛИЛЕО',
   logo: '',
   primaryColor: '#166534',
   accentColor: '#C2410C',
-  seoDefaultTitle: 'WikiNova',
+  seoDefaultTitle: 'ГАЛИЛЕО',
   seoDefaultDescription: 'Локальная энциклопедия: статьи, категории, AI-ассистент.',
   socials: { telegram: '', vk: '', youtube: '' },
   homeText: '',

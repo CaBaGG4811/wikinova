@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Статьи',
-  description: 'Каталог статей WikiNova с фильтрами по категории, тегу, автору и дате.',
+  description: 'Каталог статей ГАЛИЛЕО с фильтрами по категории, тегу, автору и дате.',
 };
 
 const PAGE_SIZE = 12;
