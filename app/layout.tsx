@@ -23,7 +23,6 @@ const mono = {
 export const metadata: Metadata = {
   title: { default: 'ГАЛИЛЕО — локальная энциклопедия', template: '%s · ГАЛИЛЕО' },
   description: 'Современная локальная энциклопедия: статьи, категории, AI-ассистент.',
-  icons: { icon: [{ url: '/logo.png', type: 'image/png' }] },
 };
 
 const themeScript = `(function(){try{var t=localStorage.getItem('wn-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();`;
