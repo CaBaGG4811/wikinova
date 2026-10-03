@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { TopLogin } from '@/components/layout/TopLogin';
 import { AuthModalProvider } from '@/components/auth/AuthModal';
-import { AssistantDock } from '@/components/ai/AssistantDock';
 import { Providers } from '@/components/Providers';
 import { getBlocks } from '@/lib/blocks';
 import { EditableBlock } from '@/components/admin/EditableBlock';
+import { SiteFooter } from '@/components/layout/SiteFooter';
 
 export const dynamic = 'force-dynamic';
 
@@ -21,7 +21,7 @@ export default async function PublicLayout({ children }: { children: React.React
             <TopLogin />
           </div>
           <main className="flex-1">{children}</main>
-          <footer className="mt-16 border-t border-line">
+          <SiteFooter>
             <div className="mx-auto grid max-w-6xl gap-6 px-4 py-8 text-sm text-muted sm:grid-cols-3">
               <div>
                 <div className="font-display font-semibold text-ink mb-2">ГАЛИЛЕО</div>
@@ -34,7 +34,7 @@ export default async function PublicLayout({ children }: { children: React.React
                 </p>
               </div>
               <div className="flex flex-col gap-1.5">
-                <Link href="/articles" className="hover:text-ink">Каталог статей</Link>
+                <Link href="/articles" className="hover:text-ink">Энциклопедия</Link>
                 <Link href="/collections" className="hover:text-ink">Коллекции</Link>
                 <Link href="/request" className="hover:text-ink">Заявка на статью</Link>
                 <Link href="/contact" className="hover:text-ink">Контакты</Link>
@@ -51,8 +51,7 @@ export default async function PublicLayout({ children }: { children: React.React
                 </span>
               </div>
             </div>
-          </footer>
-          <AssistantDock />
+          </SiteFooter>
         </div>
       </AuthModalProvider>
     </Providers>

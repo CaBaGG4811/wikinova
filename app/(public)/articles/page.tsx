@@ -1,94 +1,148 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import type { Prisma } from '@prisma/client';
+import { ArrowLeft, BookOpen, Search } from 'lucide-react';
 import { db } from '@/lib/db';
 import { cardInclude, spStr } from '@/lib/article';
 import { ArticleGrid } from '@/components/article/ArticleGrid';
-import { ArticleFilters } from '@/components/article/ArticleFilters';
 import { Pagination } from '@/components/article/Pagination';
 import { Breadcrumbs } from '@/components/article/Breadcrumbs';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Статьи',
-  description: 'Каталог статей ГАЛИЛЕО с фильтрами по категории, тегу, автору и дате.',
+  title: 'Энциклопедия',
+  description: 'Энциклопедия ГАЛИЛЕО: области знаний, статьи и поиск по страницам.',
 };
 
 const PAGE_SIZE = 12;
 
-export default async function ArticlesPage({
+export default async function EncyclopediaPage({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
   const category = spStr(searchParams.category);
-  const tag = spStr(searchParams.tag);
-  const author = spStr(searchParams.author);
-  const date = spStr(searchParams.date);
-  const sort = spStr(searchParams.sort);
-  const view = spStr(searchParams.view) === 'list' ? 'list' : 'grid';
+  const q = spStr(searchParams.q);
   const page = Math.max(1, Number(spStr(searchParams.page)) || 1);
 
-  const where: Prisma.ArticleWhereInput = { status: 'published' };
-  if (category) where.category = { slug: category };
-  if (tag) where.tags = { some: { tag: { slug: tag } } };
-  if (author) where.authorId = author;
-  if (date === 'week' || date === 'month' || date === 'year') {
-    const days = date === 'week' ? 7 : date === 'month' ? 30 : 365;
-    where.publishedAt = { gte: new Date(Date.now() - days * 86400000) };
+  if (!category) {
+    const categories = await db.category.findMany({
+      orderBy: { name: 'asc' },
+      include: { _count: { select: { articles: { where: { status: 'published' } } } } },
+    });
+
+    return (
+      <div className="mx-auto max-w-6xl px-4 py-10">
+        <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Энциклопедия' }]} />
+
+        <div className="mb-8">
+          <h1 className="font-display text-h2 font-bold text-ink">Энциклопедия</h1>
+          <p className="mt-1 text-caption text-muted">Выберите область знаний</p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {categories.map((c) => (
+            <Link
+              key={c.id}
+              href={`/articles?category=${encodeURIComponent(c.slug)}`}
+              className="card card-hoverable group flex items-center gap-4 p-5"
+            >
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary">
+                <BookOpen size={22} />
+              </span>
+              <span className="min-w-0">
+                <span className="block truncate font-display font-semibold text-ink transition-colors group-hover:text-accent">
+                  {c.name}
+                </span>
+                <span className="block text-xs text-muted">
+                  {c._count.articles} {c._count.articles === 1 ? 'статья' : 'статей'}
+                </span>
+              </span>
+            </Link>
+          ))}
+        </div>
+
+        {categories.length === 0 ? (
+          <p className="rounded-xl border border-dashed border-line py-10 text-center text-sm text-muted">
+            Областей знаний пока нет
+          </p>
+        ) : null}
+      </div>
+    );
   }
 
-  const orderBy: Prisma.ArticleOrderByWithRelationInput[] =
-    sort === 'views'
-      ? [{ views: 'desc' }]
-      : sort === 'title'
-        ? [{ title: 'asc' }]
-        : [{ publishedAt: 'desc' }, { createdAt: 'desc' }];
+  const cat = await db.category.findUnique({ where: { slug: category } });
+  if (!cat) notFound();
 
-  const [items, total, categories, tags, authors] = await Promise.all([
+  const where: Prisma.ArticleWhereInput = { status: 'published', category: { slug: category } };
+  if (q) {
+    where.OR = [{ title: { contains: q } }, { excerpt: { contains: q } }];
+  }
+
+  const [items, total] = await Promise.all([
     db.article.findMany({
       where,
       include: cardInclude,
-      orderBy,
+      orderBy: [{ publishedAt: 'desc' }, { createdAt: 'desc' }],
       skip: (page - 1) * PAGE_SIZE,
       take: PAGE_SIZE,
     }),
     db.article.count({ where }),
-    db.category.findMany({ orderBy: { name: 'asc' }, select: { slug: true, name: true } }),
-    db.tag.findMany({ orderBy: { name: 'asc' }, select: { slug: true, name: true } }),
-    db.user.findMany({
-      where: { articles: { some: { status: 'published' } } },
-      orderBy: { name: 'asc' },
-      select: { id: true, name: true },
-    }),
   ]);
 
   const pages = Math.max(1, Math.ceil(total / PAGE_SIZE));
-  const filterParams = { category, tag, author, date, sort, view: view === 'list' ? 'list' : '' };
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
-      <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Статьи' }]} />
+      <Breadcrumbs
+        items={[
+          { label: 'Главная', href: '/' },
+          { label: 'Энциклопедия', href: '/articles' },
+          { label: cat.name },
+        ]}
+      />
 
-      <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h1 className="font-display text-h2 font-bold">Статьи</h1>
-          <p className="mt-1 text-caption text-muted">Найдено: {total}</p>
-        </div>
-      </div>
+      <Link
+        href="/articles"
+        className="mb-4 inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-accent"
+      >
+        <ArrowLeft size={14} />
+        Все области знаний
+      </Link>
 
       <div className="mb-6">
-        <ArticleFilters
-          categories={categories.map((c) => ({ value: c.slug, label: c.name }))}
-          tags={tags.map((t) => ({ value: t.slug, label: t.name }))}
-          authors={authors.map((a) => ({ value: a.id, label: a.name }))}
-          current={{ category, tag, author, date, sort, view }}
-        />
+        <h1 className="font-display text-h2 font-bold text-ink">{cat.name}</h1>
+        <p className="mt-1 text-caption text-muted">Найдено страниц: {total}</p>
       </div>
 
-      <ArticleGrid items={items} view={view} stagger emptyText="Под эти фильтры статей нет" />
+      <form method="GET" action="/articles" className="mb-8 flex gap-2">
+        <input type="hidden" name="category" value={category} />
+        <div className="relative flex-1">
+          <Search
+            size={16}
+            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted"
+            aria-hidden="true"
+          />
+          <input
+            type="search"
+            name="q"
+            defaultValue={q}
+            placeholder="Поиск по страницам..."
+            aria-label="Поиск по страницам"
+            autoComplete="off"
+            className="input !py-2.5 !pl-9"
+          />
+        </div>
+        <button type="submit" className="btn-primary">
+          Найти
+        </button>
+      </form>
 
-      <Pagination page={page} pages={pages} basePath="/articles" params={filterParams} />
+      <ArticleGrid items={items} view="grid" stagger emptyText="В этом разделе страниц пока нет" />
+
+      <Pagination page={page} pages={pages} basePath="/articles" params={{ category, q }} />
     </div>
   );
 }

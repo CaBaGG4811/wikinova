@@ -114,14 +114,14 @@ export function ChatPanel({
             {messages.map((m, i) =>
               m.role === 'user' ? (
                 <div key={`${i}-user`} className="flex justify-end">
-                  <p className="max-w-[85%] whitespace-pre-wrap break-words rounded-2xl rounded-br-sm bg-gradient-to-r from-primary to-accent px-4 py-2.5 text-sm leading-relaxed text-white shadow-[0_6px_16px_-10px_rgb(76_132_188/0.8)]">
+                  <p className="max-w-[85%] whitespace-pre-wrap break-words rounded-2xl rounded-br-sm bg-accent px-4 py-2.5 text-sm leading-relaxed text-white">
                     {m.content}
                   </p>
                 </div>
               ) : (
                 <div key={`${i}-assistant`} className="flex gap-2.5">
                   <div
-                    className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-ai text-white"
+                    className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-accent text-white"
                     aria-hidden="true"
                   >
                     <Sparkles size={14} />

@@ -145,7 +145,7 @@ export default function AdminShell({ role, name, email, children }: AdminShellPr
           <aside className="hidden md:flex sticky top-0 h-screen w-60 shrink-0 flex-col border-r border-line bg-surface overflow-y-auto">
             <div className="h-14 flex items-center px-5 border-b border-line shrink-0">
               <Link href="/admin" className="font-display font-bold text-lg tracking-tight inline-flex items-center gap-2">
-                <img src="/logo.png" alt="ГАЛИЛЕО" className="h-8 w-auto dark:drop-shadow-[0_1px_3px_rgba(245,245,244,0.3)]" />
+                <span className="font-display text-lg font-extrabold tracking-tight text-ink">ГАЛИЛЕО</span>
                 <span className="text-xs font-normal text-muted">админка</span>
               </Link>
             </div>
@@ -176,7 +176,7 @@ export default function AdminShell({ role, name, email, children }: AdminShellPr
           <div className="flex-1 min-w-0 flex flex-col">
             <header className="md:hidden sticky top-0 z-40 h-14 flex items-center justify-between gap-3 border-b border-line bg-surface px-4">
               <Link href="/admin" className="font-display font-bold text-lg tracking-tight inline-flex items-center">
-                <img src="/logo.png" alt="ГАЛИЛЕО" className="h-8 w-auto dark:drop-shadow-[0_1px_3px_rgba(245,245,244,0.3)]" />
+                <span className="font-display text-lg font-extrabold tracking-tight text-ink">ГАЛИЛЕО</span>
               </Link>
               <div className="flex items-center gap-1">
                 <Link href="/" className="btn-ghost !px-2.5" aria-label="На сайт">
@@ -205,7 +205,7 @@ export default function AdminShell({ role, name, email, children }: AdminShellPr
               />
               <div className="relative w-64 max-w-[80vw] bg-surface border-r border-line flex flex-col">
                 <div className="h-14 flex items-center justify-between px-4 border-b border-line">
-                <img src="/logo.png" alt="ГАЛИЛЕО" className="h-8 w-auto dark:drop-shadow-[0_1px_3px_rgba(245,245,244,0.3)]" />
+                <span className="font-display text-lg font-extrabold tracking-tight text-ink">ГАЛИЛЕО</span>
                   <button
                     type="button"
                     className="btn-ghost !px-2"

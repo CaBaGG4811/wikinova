@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -102,15 +102,15 @@ function AuthModal({
 
     if (mode === 'register') {
       if (name.trim().length < 2) {
-        setError('Имя должно содержать минимум 2 символа.');
+        setError('РРјСЏ РґРѕР»Р¶РЅРѕ СЃРѕРґРµСЂР¶Р°С‚СЊ РјРёРЅРёРјСѓРј 2 СЃРёРјРІРѕР»Р°.');
         return;
       }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
-        setError('Введите корректный email.');
+        setError('Р’РІРµРґРёС‚Рµ РєРѕСЂСЂРµРєС‚РЅС‹Р№ email.');
         return;
       }
       if (password.length < 8) {
-        setError('Пароль должен содержать минимум 8 символов.');
+        setError('РџР°СЂРѕР»СЊ РґРѕР»Р¶РµРЅ СЃРѕРґРµСЂР¶Р°С‚СЊ РјРёРЅРёРјСѓРј 8 СЃРёРјРІРѕР»РѕРІ.');
         return;
       }
       setBusy(true);
@@ -122,17 +122,17 @@ function AuthModal({
         });
         const data = (await res.json().catch(() => null)) as { error?: string } | null;
         if (!res.ok) {
-          setError(data?.error ?? `Ошибка регистрации (${res.status}).`);
+          setError(data?.error ?? `РћС€РёР±РєР° СЂРµРіРёСЃС‚СЂР°С†РёРё (${res.status}).`);
           return;
         }
         const s = await signIn('credentials', { email: email.trim(), password, redirect: false });
         if (s?.error) {
-          setError('Аккаунт создан, но вход не удался. Попробуйте войти.');
+          setError('РђРєРєР°СѓРЅС‚ СЃРѕР·РґР°РЅ, РЅРѕ РІС…РѕРґ РЅРµ СѓРґР°Р»СЃСЏ. РџРѕРїСЂРѕР±СѓР№С‚Рµ РІРѕР№С‚Рё.');
           setMode('login');
           return;
         }
       } catch {
-        setError('Сервер недоступен. Попробуйте позже.');
+        setError('РЎРµСЂРІРµСЂ РЅРµРґРѕСЃС‚СѓРїРµРЅ. РџРѕРїСЂРѕР±СѓР№С‚Рµ РїРѕР·Р¶Рµ.');
         return;
       } finally {
         setBusy(false);
@@ -145,11 +145,11 @@ function AuthModal({
     try {
       const s = await signIn('credentials', { email: email.trim(), password, redirect: false });
       if (s?.error) {
-        setError('Неверный email или пароль.');
+        setError('РќРµРІРµСЂРЅС‹Р№ email РёР»Рё РїР°СЂРѕР»СЊ.');
         return;
       }
     } catch {
-      setError('Сервер недоступен. Попробуйте позже.');
+      setError('РЎРµСЂРІРµСЂ РЅРµРґРѕСЃС‚СѓРїРµРЅ. РџРѕРїСЂРѕР±СѓР№С‚Рµ РїРѕР·Р¶Рµ.');
       return;
     } finally {
       setBusy(false);
@@ -158,53 +158,53 @@ function AuthModal({
   }
 
   function socialNotice(provider: string) {
-    setNotice(`${provider}: вход подключим позже, пока войдите по email.`);
+    setNotice(`${provider}: РІС…РѕРґ РїРѕРґРєР»СЋС‡РёРј РїРѕР·Р¶Рµ, РїРѕРєР° РІРѕР№РґРёС‚Рµ РїРѕ email.`);
   }
 
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center p-4">
       <button
         type="button"
-        aria-label="Закрыть"
+        aria-label="Р—Р°РєСЂС‹С‚СЊ"
         onClick={onClose}
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
       />
       <div
         role="dialog"
         aria-modal="true"
-        aria-label={mode === 'login' ? 'Вход в ГАЛИЛЕО' : 'Регистрация в ГАЛИЛЕО'}
+        aria-label={mode === 'login' ? 'Р’С…РѕРґ РІ Р“РђР›РР›Р•Рћ' : 'Р РµРіРёСЃС‚СЂР°С†РёСЏ РІ Р“РђР›РР›Р•Рћ'}
         className="relative w-full max-w-md rounded-2xl bg-white p-8 shadow-2xl"
       >
         <button
           type="button"
           onClick={onClose}
-          aria-label="Закрыть"
+          aria-label="Р—Р°РєСЂС‹С‚СЊ"
           className="absolute right-4 top-4 rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-700"
         >
           <X size={18} />
         </button>
 
         <h2 className="font-display text-xl font-extrabold tracking-tight text-gray-900">
-          {mode === 'login' ? 'Вход в ГАЛИЛЕО' : 'Регистрация в ГАЛИЛЕО'}
+          {mode === 'login' ? 'Р’С…РѕРґ РІ Р“РђР›РР›Р•Рћ' : 'Р РµРіРёСЃС‚СЂР°С†РёСЏ РІ Р“РђР›РР›Р•Рћ'}
         </h2>
         <p className="mt-1 text-sm text-gray-500">
           {mode === 'login'
-            ? 'Продолжайте читать, собирать коллекции и задавать вопросы.'
-            : 'Заведите аккаунт читателя за минуту.'}
+            ? 'РџСЂРѕРґРѕР»Р¶Р°Р№С‚Рµ С‡РёС‚Р°С‚СЊ, СЃРѕР±РёСЂР°С‚СЊ РєРѕР»Р»РµРєС†РёРё Рё Р·Р°РґР°РІР°С‚СЊ РІРѕРїСЂРѕСЃС‹.'
+            : 'Р—Р°РІРµРґРёС‚Рµ Р°РєРєР°СѓРЅС‚ С‡РёС‚Р°С‚РµР»СЏ Р·Р° РјРёРЅСѓС‚Сѓ.'}
         </p>
 
         <form onSubmit={submit} className="mt-6 space-y-3">
           {mode === 'register' ? (
             <div>
               <label className="mb-1.5 block text-sm font-medium text-gray-700" htmlFor="auth-name">
-                Имя
+                РРјСЏ
               </label>
               <input
                 id="auth-name"
                 className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-900 outline-none transition focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/15"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Ваше имя"
+                placeholder="Р’Р°С€Рµ РёРјСЏ"
                 autoComplete="name"
               />
             </div>
@@ -227,7 +227,7 @@ function AuthModal({
 
           <div>
             <label className="mb-1.5 block text-sm font-medium text-gray-700" htmlFor="auth-password">
-              Пароль
+              РџР°СЂРѕР»СЊ
             </label>
             <input
               id="auth-password"
@@ -235,7 +235,7 @@ function AuthModal({
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder={mode === 'register' ? 'Минимум 8 символов' : 'Ваш пароль'}
+              placeholder={mode === 'register' ? 'РњРёРЅРёРјСѓРј 8 СЃРёРјРІРѕР»РѕРІ' : 'Р’Р°С€ РїР°СЂРѕР»СЊ'}
               autoComplete={mode === 'register' ? 'new-password' : 'current-password'}
             />
           </div>
@@ -245,15 +245,15 @@ function AuthModal({
           <button
             type="submit"
             disabled={busy}
-            className="w-full rounded-xl bg-gradient-to-r from-primary to-accent px-4 py-3 text-sm font-semibold text-white shadow-md transition hover:from-[#41719f] hover:to-[#4a5193] disabled:opacity-60"
+            className="w-full rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#41719f] disabled:opacity-60"
           >
-            {busy ? 'Подождите…' : mode === 'login' ? 'Войти' : 'Создать аккаунт'}
+            {busy ? 'РџРѕРґРѕР¶РґРёС‚РµвЂ¦' : mode === 'login' ? 'Р’РѕР№С‚Рё' : 'РЎРѕР·РґР°С‚СЊ Р°РєРєР°СѓРЅС‚'}
           </button>
         </form>
 
         <div className="my-5 flex items-center gap-3 text-xs uppercase tracking-wide text-gray-400">
           <span className="h-px flex-1 bg-gray-200" />
-          или
+          РёР»Рё
           <span className="h-px flex-1 bg-gray-200" />
         </div>
 
@@ -264,17 +264,17 @@ function AuthModal({
             className="flex w-full items-center justify-center gap-2.5 rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-50"
           >
             <GoogleGlyph />
-            Продолжить с Google
+            РџСЂРѕРґРѕР»Р¶РёС‚СЊ СЃ Google
           </button>
           <button
             type="button"
-            onClick={() => socialNotice('Яндекс ID')}
+            onClick={() => socialNotice('РЇРЅРґРµРєСЃ ID')}
             className="flex w-full items-center justify-center gap-2.5 rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-50"
           >
             <span className="flex h-[18px] w-[18px] items-center justify-center rounded bg-[#FC3F1D] text-[11px] font-bold leading-none text-white">
-              Я
+              РЇ
             </span>
-            Войти с Яндекс ID
+            Р’РѕР№С‚Рё СЃ РЇРЅРґРµРєСЃ ID
           </button>
           <button
             type="button"
@@ -282,14 +282,14 @@ function AuthModal({
             className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-[#0077FF] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0066DD]"
           >
             <span className="text-[13px] font-extrabold tracking-tight">VK</span>
-            Войти через VK
+            Р’РѕР№С‚Рё С‡РµСЂРµР· VK
           </button>
         </div>
 
         {notice ? <p className="mt-3 text-center text-xs text-gray-500">{notice}</p> : null}
 
         <p className="mt-5 text-center text-sm text-gray-500">
-          {mode === 'login' ? 'Нет аккаунта? ' : 'Уже есть аккаунт? '}
+          {mode === 'login' ? 'РќРµС‚ Р°РєРєР°СѓРЅС‚Р°? ' : 'РЈР¶Рµ РµСЃС‚СЊ Р°РєРєР°СѓРЅС‚? '}
           <button
             type="button"
             onClick={() => {
@@ -299,7 +299,7 @@ function AuthModal({
             }}
             className="font-semibold text-accent underline underline-offset-2 hover:text-accent"
           >
-            {mode === 'login' ? 'Зарегистрироваться' : 'Войти'}
+            {mode === 'login' ? 'Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ' : 'Р’РѕР№С‚Рё'}
           </button>
         </p>
       </div>
