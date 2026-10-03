@@ -67,7 +67,11 @@ h1, h2, h3, h4, .font-display {
     transform: translateY(0) scale-95;
   }
   .btn-primary {
-    @apply btn text-white bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 shadow-sm;
+    @apply btn text-white bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700;
+    box-shadow: 0 6px 18px -6px rgb(22 101 52 / 0.5), 0 1px 2px rgb(17 24 39 / 0.06);
+  }
+  .btn-primary:hover:not(:disabled) {
+    box-shadow: 0 10px 26px -6px rgb(22 101 52 / 0.6), 0 1px 2px rgb(17 24 39 / 0.06);
   }
   .btn-secondary {
     @apply btn border border-line bg-surface text-ink hover:border-primary/50 hover:bg-primary/5;
@@ -80,6 +84,7 @@ h1, h2, h3, h4, .font-display {
   }
   .card {
     @apply rounded-lg border border-line bg-surface;
+    box-shadow: 0 1px 2px rgb(17 24 39 / 0.04);
   }
   .input {
     @apply w-full rounded-md border border-line bg-bg px-3 py-2 text-sm text-ink placeholder:text-muted/70 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-150;

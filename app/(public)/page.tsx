@@ -78,38 +78,45 @@ export default async function HomePage({
     <div className="bg-white">
       <AutoAuth mode={searchParams?.auth} />
 
-      <section className="flex min-h-[80vh] flex-col items-center justify-center px-4 pb-16 pt-24 text-center">
-        <span className="mb-6 inline-flex items-center gap-1.5 rounded-full bg-violet-100 px-3 py-1 text-xs font-semibold text-violet-700">
-          <Sparkles size={13} />
-          AI-поиск знаний
-        </span>
-        <h1 className="font-display max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-          Что вы хотите узнать?
-        </h1>
-        <p className="mt-5 max-w-xl text-lg text-gray-500">
-          Задайте вопрос — мы найдём ответ в статьях WikiNova и подскажем, с чего начать.
-        </p>
-
-        <div className="mt-10 w-full">
-          <HeroAskInput />
+      <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-4 pb-16 pt-24">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/2 top-1/2 h-[500px] w-[920px] max-w-[130vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(34_197_94/0.22),rgb(16_185_129/0.08),transparent)] blur-3xl" />
+          <div className="absolute left-1/2 top-[44%] h-[320px] w-[540px] max-w-[110vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(124_58_237/0.13),transparent)] blur-3xl" />
         </div>
 
-        <div className="mt-6 flex max-w-3xl flex-wrap justify-center gap-2">
-          {POPULAR_QUESTIONS.map((question) => (
-            <Link
-              key={question}
-              href={`/search?q=${encodeURIComponent(question)}`}
-              className="rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm text-gray-600 transition hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700"
-            >
-              {question}
-            </Link>
-          ))}
+        <div className="relative z-10 flex w-full max-w-3xl flex-col items-center text-center">
+          <span className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-violet-200/70 bg-violet-100/80 px-3 py-1 text-xs font-semibold text-violet-700">
+            <Sparkles size={13} />
+            AI-поиск знаний
+          </span>
+          <h1 className="font-display max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+            Что вы хотите узнать?
+          </h1>
+          <p className="mt-5 max-w-xl text-lg text-gray-500">
+            Задайте вопрос — мы найдём ответ в статьях WikiNova и подскажем, с чего начать.
+          </p>
+
+          <div className="mt-10 w-full">
+            <HeroAskInput />
+          </div>
+
+          <div className="mt-6 flex max-w-3xl flex-wrap justify-center gap-2">
+            {POPULAR_QUESTIONS.map((question) => (
+              <Link
+                key={question}
+                href={`/search?q=${encodeURIComponent(question)}`}
+                className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-600 shadow-[0_1px_2px_rgb(17_24_39/0.05)] transition hover:border-green-300 hover:text-green-800 hover:shadow-[0_6px_16px_-8px_rgb(22_101_52/0.55)]"
+              >
+                {question}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="mx-auto mt-32 max-w-6xl px-4">
         <div className="grid gap-6 md:grid-cols-3">
-          <article className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md duration-300">
+          <article className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md duration-300">
             {dayArticle ? (
               <Link
                 href={`/article/${dayArticle.slug}`}
@@ -157,7 +164,7 @@ export default async function HomePage({
             </div>
           </article>
 
-          <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 shadow-sm">
+          <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-sm">
             <span className="text-xs font-semibold uppercase tracking-wide text-violet-600">
               Факт дня
             </span>
@@ -168,7 +175,7 @@ export default async function HomePage({
             <p className="mt-4 text-xs text-gray-400">Каждый день — новый факт из энциклопедии.</p>
           </div>
 
-          <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+          <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
             <span className="text-xs font-semibold uppercase tracking-wide text-violet-600">
               Новое в коллекциях
             </span>

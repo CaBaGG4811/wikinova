@@ -3,14 +3,13 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
-import { BookOpen, Home, Library, LogOut, Network, User } from 'lucide-react';
+import { BookOpen, Home, Library, LogOut, User } from 'lucide-react';
 import { useAuthModal } from '@/components/auth/AuthModal';
 
 const navItems = [
   { href: '/', label: 'Главная', icon: Home },
   { href: '/articles', label: 'Статьи', icon: BookOpen },
   { href: '/collections', label: 'Коллекции', icon: Library },
-  { href: '/graph', label: 'Карта знаний', icon: Network },
 ];
 
 const labelClass =
@@ -31,7 +30,11 @@ export function Sidebar() {
         className="flex h-16 shrink-0 items-center gap-3 px-4 transition-colors hover:bg-gray-50"
         aria-label="WikiNova — на главную"
       >
-        <img src="/logo.png" alt="" className="h-8 w-8 shrink-0 object-contain" />
+        <img
+          src="/logo.png"
+          alt=""
+          className="h-8 w-8 shrink-0 object-contain drop-shadow-[0_2px_8px_rgb(34_197_94/0.45)]"
+        />
         <span className="font-display text-lg font-extrabold tracking-tight text-gray-900 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           WikiNova
         </span>
@@ -48,7 +51,7 @@ export function Sidebar() {
               href={item.href}
               className={`group/item flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors ${
                 active
-                  ? 'bg-green-50 text-green-700'
+                  ? 'bg-green-50 text-green-700 shadow-[0_4px_16px_-8px_rgb(22_101_52/0.65)]'
                   : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
               }`}
             >
@@ -84,7 +87,7 @@ export function Sidebar() {
           <button
             type="button"
             onClick={() => open('login')}
-            className="group/item flex items-center gap-3 rounded-lg bg-gradient-to-r from-green-600 to-emerald-600 px-3 py-2.5 text-white shadow-sm transition hover:from-green-700 hover:to-emerald-700"
+            className="group/item flex items-center gap-3 rounded-lg bg-gradient-to-r from-green-600 to-emerald-600 px-3 py-2.5 text-white shadow-[0_8px_20px_-8px_rgb(22_101_52/0.8)] transition hover:from-green-700 hover:to-emerald-700"
           >
             <User size={20} className="shrink-0" />
             <span className={labelClass}>Войти</span>

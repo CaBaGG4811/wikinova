@@ -32,7 +32,6 @@ export default async function PublicLayout({ children }: { children: React.React
               <div className="flex flex-col gap-1.5">
                 <Link href="/articles" className="hover:text-ink">Каталог статей</Link>
                 <Link href="/collections" className="hover:text-ink">Коллекции</Link>
-                <Link href="/graph" className="hover:text-ink">Карта знаний</Link>
                 <Link href="/request" className="hover:text-ink">Заявка на статью</Link>
                 <Link href="/contact" className="hover:text-ink">Контакты</Link>
               </div>
