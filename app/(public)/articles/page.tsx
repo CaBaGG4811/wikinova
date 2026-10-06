@@ -7,7 +7,6 @@ import { db } from '@/lib/db';
 import { cardInclude, spStr } from '@/lib/article';
 import { ArticleGrid } from '@/components/article/ArticleGrid';
 import { Pagination } from '@/components/article/Pagination';
-import { Breadcrumbs } from '@/components/article/Breadcrumbs';
 
 export const dynamic = 'force-dynamic';
 
@@ -35,8 +34,6 @@ export default async function EncyclopediaPage({
 
     return (
       <div className="mx-auto max-w-6xl px-4 py-10">
-        <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Энциклопедия' }]} />
-
         <div className="mb-8">
           <h1 className="font-display text-h2 font-bold text-ink">Энциклопедия</h1>
           <p className="mt-1 text-caption text-muted">Выберите область знаний</p>
@@ -96,14 +93,6 @@ export default async function EncyclopediaPage({
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
-      <Breadcrumbs
-        items={[
-          { label: 'Главная', href: '/' },
-          { label: 'Энциклопедия', href: '/articles' },
-          { label: cat.name },
-        ]}
-      />
-
       <Link
         href="/articles"
         className="mb-4 inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-accent"

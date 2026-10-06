@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -12,8 +12,8 @@ import {
 } from '@/components/layout/NavIcons';
 
 const navItems = [
-  { href: '/articles', label: 'Р­РЅС†РёРєР»РѕРїРµРґРёСЏ', icon: GalileoBookIcon },
-  { href: '/collections', label: 'РљРѕР»Р»РµРєС†РёРё', icon: GalileoCollectionsIcon },
+  { href: '/articles', label: 'Энциклопедия', icon: GalileoBookIcon },
+  { href: '/collections', label: 'Коллекции', icon: GalileoCollectionsIcon },
 ];
 
 export function Sidebar() {
@@ -23,20 +23,20 @@ export function Sidebar() {
   return (
     <aside
       className="fixed inset-y-0 left-0 z-50 flex w-16 flex-col border-r border-line bg-white md:w-60"
-      aria-label="Р‘РѕРєРѕРІР°СЏ РЅР°РІРёРіР°С†РёСЏ"
+      aria-label="Боковая навигация"
     >
       <Link
         href="/"
         className="flex h-16 shrink-0 items-center gap-2.5 px-4 transition-colors hover:bg-surface"
-        aria-label="Р“РђР›РР›Р•Рћ вЂ” Р°СЃСЃРёСЃС‚РµРЅС‚"
+        aria-label="ГАЛИЛЕО — ассистент"
       >
         <span className="font-display text-xl font-extrabold tracking-tight text-ink">
-          <span className="md:hidden">Р“</span>
-          <span className="hidden md:inline">Р“РђР›РР›Р•Рћ</span>
+          <span className="md:hidden">Г</span>
+          <span className="hidden md:inline">ГАЛИЛЕО</span>
         </span>
       </Link>
 
-      <nav className="mt-3 flex flex-col gap-1 px-2" aria-label="РћСЃРЅРѕРІРЅС‹Рµ СЂР°Р·РґРµР»С‹">
+      <nav className="mt-3 flex flex-col gap-1 px-2" aria-label="Основные разделы">
         <Link
           href="/"
           className={`flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors ${
@@ -46,7 +46,7 @@ export function Sidebar() {
           }`}
         >
           <GalileoAssistantIcon size={22} />
-          <span className="hidden text-sm font-medium md:inline">РђСЃСЃРёСЃС‚РµРЅС‚</span>
+          <span className="hidden text-sm font-medium md:inline">Ассистент</span>
         </Link>
 
         {navItems.map((item) => {
@@ -79,7 +79,7 @@ export function Sidebar() {
             >
               <GalileoUserIcon size={22} />
               <span className="hidden truncate text-sm font-medium md:inline">
-                {session.user.name ?? session.user.email ?? 'РџСЂРѕС„РёР»СЊ'}
+                {session.user.name ?? session.user.email ?? 'Профиль'}
               </span>
             </Link>
             <button
@@ -88,7 +88,7 @@ export function Sidebar() {
               className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-gray-600 transition-colors hover:bg-gray-100 hover:text-red-600"
             >
               <LogOut size={20} className="shrink-0" />
-              <span className="hidden text-sm font-medium md:inline">Р’С‹Р№С‚Рё</span>
+              <span className="hidden text-sm font-medium md:inline">Выйти</span>
             </button>
           </>
         ) : null}
